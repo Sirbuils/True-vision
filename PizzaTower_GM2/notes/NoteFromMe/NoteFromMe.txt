@@ -175,3 +175,7 @@ new build.....
 mak n sauce is a great guy actually
 
 penis
+
+a lot of bugfixxing are coming but I need to test it out a bit
+also figured out why spitcheese were spitting cheese fast - I removed one line in player create code lmao. though my fix works
+fine too, I'm gonna return it back.
