@@ -6,7 +6,7 @@ An optimised version of **Pizza Tower EXtracted**, a semi-accurate decompilation
 1. Memory leaks. Pizza Tower had a lot of textures, and a lot of them are unused, which could cause a memory leak while compiling a game through GameMaker.
 2. More comfortable working. Now you can easily find something used and add new without lags.
 3. That's it. I made this decomp so I could work faster without lags and stuff.... if you don't have a PC which runs Cyberpunk 2077 at 600FPS then you can use this decomp...
-4. 
+
 Decomp is **free-to-use**, but I would really appreciate if you credit me (Dockronic) if you use it. If there are bugs, crashes, some other stuff - please write me in my Discord Server (https://discord.gg/kJHURzRq97).
 
 <img width="100" height="202" alt="spr_candysona_idleDock" src="https://github.com/user-attachments/assets/f0ba02ee-4a07-4ebb-8ff6-51304ce1c92a" />
