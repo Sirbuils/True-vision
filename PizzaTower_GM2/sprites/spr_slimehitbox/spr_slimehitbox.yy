@@ -68,7 +68,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Baddies",
-    "path": "folders/Sprites/Room Structure/Level Structure/Baddies.yy",
+    "name": "Unused",
+    "path": "folders/Sprites/Unused.yy",
   },
 }

@@ -21,8 +21,8 @@
   "width": 141,
   "height": 70,
   "textureGroupId": {
-    "name": "levelstructuregroup",
-    "path": "texturegroups/levelstructuregroup",
+    "name": "baddiegroup",
+    "path": "texturegroups/baddiegroup",
   },
   "swatchColours": null,
   "gridX": 0,

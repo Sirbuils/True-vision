@@ -31,17 +31,17 @@ function scr_hurtplayer(_player)
 		}
 		else if (global.kungfu)
 		{
-			//if (state == states.blockstance)
-			//{
-			//	if (sprite_index != spr_player_airattackstart)
-			//	{
-			//		instance_create(x, y, obj_parryeffect);
-			//		image_index = 0;
-			//	}
-			//	sprite_index = spr_player_airattackstart;
-			//	hsp = -xscale * 2;
-			//}
-			if (state != states.thrown && state != states.hit && !hurted)
+			if (state == states.blockstance)
+			{
+				if (sprite_index != spr_player_airattackstart)
+				{
+					instance_create(x, y, obj_parryeffect);
+					image_index = 0;
+				}
+				sprite_index = spr_player_airattackstart;
+				hsp = -xscale * 2;
+			}
+			else if (state != states.thrown && state != states.hit && !hurted)
 			{
 				instance_create(x, y, obj_parryeffect);
 				repeat (5)
@@ -211,6 +211,10 @@ function scr_hurtplayer(_player)
 			{
 				fmod_event_one_shot_3d("event:/sfx/mort/mortdead", x, y);
 				create_debris(x, y - 40, spr_mortdead);
+			}
+			if (instance_exists(obj_hardmode))
+			{
+				global.heatmeter_count = (global.heatmeter_threshold - 1) * global.heatmeter_threshold_count;
 			}
 			_hurt = true;
 			pistolanim = noone;

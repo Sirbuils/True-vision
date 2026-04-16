@@ -1,5 +1,9 @@
 if (image_alpha == 1 && !place_meeting(x, y, obj_metalblock))
 {
+	if (obj_player1.character == "V")
+	{
+		global.playerhealth = clamp(global.playerhealth + 10, 0, 100);
+	}
 	global.heattime = 60;
 	with (obj_camera)
 	{

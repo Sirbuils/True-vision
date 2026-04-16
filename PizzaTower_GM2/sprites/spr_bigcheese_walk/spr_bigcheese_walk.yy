@@ -86,7 +86,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Big Cheese",
-    "path": "folders/Sprites/Room Structure/Level Structure/Gimmicks/Big Cheese.yy",
+    "name": "Unused",
+    "path": "folders/Sprites/Unused.yy",
   },
 }

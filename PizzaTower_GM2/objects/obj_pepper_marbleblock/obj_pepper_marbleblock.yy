@@ -2,7 +2,10 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_pepper_marbleblock",
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_pepper_marbleblock",
+    "path": "sprites/spr_pepper_marbleblock/spr_pepper_marbleblock.yy",
+  },
   "solid": false,
   "visible": true,
   "managed": true,

@@ -86,7 +86,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Indian Cheese",
-    "path": "folders/Sprites/Room Structure/Level Structure/Baddies/Indian Cheese.yy",
+    "name": "Unused",
+    "path": "folders/Sprites/Unused.yy",
   },
 }

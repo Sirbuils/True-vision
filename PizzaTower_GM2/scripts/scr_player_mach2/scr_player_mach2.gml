@@ -4,7 +4,7 @@ function scr_player_mach2()
 	var jumpspeed = -11;
 	var slopeaccel = 0.1;
 	var slopedeccel = 0.2;
-	var accel = 0.1;
+	var accel = char == "S" ? 0.3 : 0.1;
 	var mach4accel = 0.4;
 	var machrollvsp = 10;
 	if (windingAnim < 2000)
@@ -74,34 +74,34 @@ function scr_player_mach2()
 			sprite_index = spr_mach;
 			fmod_event_one_shot_3d("event:/sfx/playerN/wallbounceland", x, y);
 		}
-		if (machpunchAnim == false && sprite_index != spr_mach && sprite_index != spr_mach1 && sprite_index != spr_mach4)
+		if (machpunchAnim == false && sprite_index != spr_mach && sprite_index != spr_mach1 && sprite_index != spr_mach4 && sprite_index != spr_player_machhit)
 		{
-			if (sprite_index != spr_rollgetup && sprite_index != spr_suplexdash && sprite_index != spr_taunt && sprite_index != spr_player_Sjumpcancelstart)
+			if (sprite_index != spr_player_machhit && sprite_index != spr_rollgetup && sprite_index != spr_suplexdash && sprite_index != spr_taunt && sprite_index != spr_player_Sjumpcancelstart)
 			{
 				sprite_index = spr_mach;
 			}
 		}
-		//if (machpunchAnim == true)
-		//{
-		//	if (punch == false)
-		//	{
-		//		sprite_index = spr_machpunch1;
-		//	}
-		//	if (punch == true)
-		//	{
-		//		sprite_index = spr_machpunch2;
-		//	}
-		//	if (floor(image_index) == 4 && sprite_index == spr_machpunch1)
-		//	{
-		//		punch = true;
-		//		machpunchAnim = false;
-		//	}
-		//	if (floor(image_index) == 4 && sprite_index == spr_machpunch2)
-		//	{
-		//		punch = false;
-		//		machpunchAnim = false;
-		//	}
-		//}
+		if (machpunchAnim == true)
+		{
+			if (punch == false)
+			{
+				sprite_index = spr_machpunch1;
+			}
+			if (punch == true)
+			{
+				sprite_index = spr_machpunch2;
+			}
+			if (floor(image_index) == 4 && sprite_index == spr_machpunch1)
+			{
+				punch = true;
+				machpunchAnim = false;
+			}
+			if (floor(image_index) == 4 && sprite_index == spr_machpunch2)
+			{
+				punch = false;
+				machpunchAnim = false;
+			}
+		}
 	}
 	if (ANIMATION_END && sprite_index == spr_mach1)
 	{
@@ -369,7 +369,7 @@ function scr_player_mach2()
 			}
 		}
 	}
-	if (input_buffer_slap > 0 && !key_up && !skateboarding && shotgunAnim == false && !global.pistol)
+	if (input_buffer_slap > 0 && !key_up && !skateboarding && shotgunAnim == false && !global.pistol && char != "S")
 	{
 		input_buffer_slap = 0;
 		sprite_index = spr_suplexdash;
@@ -392,13 +392,11 @@ function scr_player_mach2()
 		sprite_index = spr_breakdanceuppercut;
 		fmod_event_instance_play(snd_uppercut);
 		if (ispeppino)
-		{
 			vsp = -10;
-		}
-		else
-		{
+		if (!ispeppino)
 			vsp = -21;
-		}
+		if (char == "S")
+			vsp = -16;
 		movespeed = hsp;
 		particle_set_scale(particletypes.highjumpcloud2, xscale, 1);
 		create_particle(x, y, particletypes.highjumpcloud2, 0);
@@ -435,4 +433,6 @@ function scr_player_mach2()
 	{
 		fmod_event_instance_stop(rollgetupsnd, true);
 	}
+	
+	scr_snick_crashdash();
 }

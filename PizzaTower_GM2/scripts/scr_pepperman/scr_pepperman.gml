@@ -511,7 +511,7 @@ function scr_pepperman_rolling()
 		if (grounded && vsp > 0)
 		{
 			state = states.walk;
-			sprite_index = spr_pepperman_exitmove;
+			sprite_index = spr_pepperman_move;
 			hsp = image_xscale * 5;
 		}
 	}

@@ -154,7 +154,14 @@ function scr_player_freefall()
 				sprite_index = spr_shotgunjump2;
 			}
 			image_index = 0;
-			state = states.freefallland;
+			if char != "S"
+				state = states.freefallland;
+			else
+			{
+				movespeed = previousmovespeed;
+				
+				state = states.mach2;
+			}
 			jumpAnim = true;
 			jumpstop = false;
 			with (obj_camera)

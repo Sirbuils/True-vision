@@ -72,7 +72,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Everything",
-    "path": "folders/Sprites/World/Everything.yy",
+    "name": "Unused",
+    "path": "folders/Sprites/Unused.yy",
   },
 }

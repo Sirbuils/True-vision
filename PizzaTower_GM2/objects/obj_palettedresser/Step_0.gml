@@ -6,9 +6,13 @@ if (obj_player1.ispeppino != ispeppino)
 	{
 		palettes = player_palettes[0];
 	}
-	else
+	if (!obj_player1.ispeppino)
 	{
 		palettes = player_palettes[1];
+	}
+	if (obj_player1.char == "S")
+	{
+		palettes = player_palettes[2];
 	}
 	with (obj_player1)
 	{
@@ -17,7 +21,12 @@ if (obj_player1.ispeppino != ispeppino)
 			for (var i = 0; i < array_length(other.palettes); i++)
 			{
 				var pal = other.palettes[i][2];
-				var info = ispeppino ? get_pep_palette_info() : get_noise_palette_info();
+				var palfunction = get_pep_palette_info()
+				if !obj_player1.ispeppino
+					palfunction = get_noise_palette_info();
+				if obj_player1.char == "S"
+					palfunction = get_snick_palette_info();
+				var info = palfunction;
 				if (pal == info.paletteselect && (array_length(other.palettes[i]) <= 3 || (array_length(other.palettes[i]) > 3 && other.palettes[i][3] == info.patterntexture)))
 				{
 					other.paletteselect = i;

@@ -230,7 +230,7 @@ function scr_bosscontroller_victory()
 	{
 		victory_buffer--;
 	}
-	else if (!instance_exists(obj_tutorialblock))
+	else if (!instance_exists(obj_bosskeynoise))
 	{
 		if (player_hp > 0)
 		{

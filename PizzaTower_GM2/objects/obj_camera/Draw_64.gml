@@ -1,7 +1,46 @@
 draw_set_alpha(1);
-if (is_bossroom() || instance_exists(obj_tutorialbook))
+if (is_bossroom() || room == editor_room || instance_exists(obj_tutorialbook))
 {
 	exit;
+}
+if (global.kungfu)
+{
+	if (global.hp == 8)
+	{
+		draw_sprite(spr_pizzahealthbar, 0, 190, 70);
+	}
+	else if (global.hp == 7)
+	{
+		draw_sprite(spr_pizzahealthbar, 1, 190, 70);
+	}
+	else if (global.hp == 6)
+	{
+		draw_sprite(spr_pizzahealthbar, 2, 190, 70);
+	}
+	else if (global.hp == 5)
+	{
+		draw_sprite(spr_pizzahealthbar, 3, 190, 70);
+	}
+	else if (global.hp == 4)
+	{
+		draw_sprite(spr_pizzahealthbar, 4, 190, 70);
+	}
+	else if (global.hp == 3)
+	{
+		draw_sprite(spr_pizzahealthbar, 5, 190, 70);
+	}
+	else if (global.hp == 2)
+	{
+		draw_sprite(spr_pizzahealthbar, 6, 190, 70);
+	}
+	else if (global.hp == 1)
+	{
+		draw_sprite(spr_pizzahealthbar, 7, 190, 70);
+	}
+	else if (global.hp == 0)
+	{
+		draw_sprite(spr_pizzahealthbar, 8, 190, 70);
+	}
 }
 if (obj_player.state != states.gameover)
 {
@@ -202,4 +241,8 @@ if (obj_player.state != states.gameover)
 	draw_set_font(lang_get_font("bigfont"));
 	draw_set_halign(fa_center);
 	draw_set_color(c_white);
+	if (obj_player1.character == "V")
+	{
+		draw_text(200 + healthshake, 125 + healthshake, global.playerhealth);
+	}
 }

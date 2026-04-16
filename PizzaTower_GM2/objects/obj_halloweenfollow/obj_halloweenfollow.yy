@@ -31,7 +31,7 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Level Structure",
-    "path": "folders/Objects/Room Structure/Level Structure.yy",
+    "name": "Room Structure",
+    "path": "folders/Objects/Room Structure.yy",
   },
 }

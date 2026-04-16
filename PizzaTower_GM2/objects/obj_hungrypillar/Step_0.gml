@@ -1,4 +1,7 @@
-
+if (room == rm_editor)
+{
+	exit;
+}
 if (sprite_index != spr_protojohn)
 {
 	var player = obj_player1.id;

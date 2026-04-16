@@ -247,18 +247,18 @@ function scr_player_climbwall()
 			break;
 		case "N":
 			hsp = 0;
-			//if (sprite_index == spr_playerN_wallclingstart && ANIMATION_END)
-			//{
-			//	sprite_index = spr_playerN_wallcling;
-			//}
-			//if (sprite_index == spr_playerN_wallcling)
-			//{
-			//	vsp = 2;
-			//}
-			//else
-			//{
-			//	vsp = 0;
-			//}
+			if (sprite_index == spr_playerN_wallclingstart && ANIMATION_END)
+			{
+				sprite_index = spr_playerN_wallcling;
+			}
+			if (sprite_index == spr_playerN_wallcling)
+			{
+				vsp = 2;
+			}
+			else
+			{
+				vsp = 0;
+			}
 			wallclingcooldown = 0;
 			if (ANIMATION_END || !key_jump2)
 			{

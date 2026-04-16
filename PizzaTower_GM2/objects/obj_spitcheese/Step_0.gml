@@ -64,7 +64,6 @@ if ((player.x > (x - 400) && player.x < (x + 400)) && (y <= (player.y + 60) && y
 			}
 			image_index = 0;
 			state = states.pizzagoblinthrow;
-			//bombreset = 50
 		}
 	}
 }

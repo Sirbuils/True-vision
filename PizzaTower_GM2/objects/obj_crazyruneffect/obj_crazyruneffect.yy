@@ -32,7 +32,7 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Effects",
-    "path": "folders/Objects/Effects.yy",
+    "name": "Unreferenced",
+    "path": "folders/Objects/Unused/Unreferenced.yy",
   },
 }

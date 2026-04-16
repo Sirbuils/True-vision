@@ -29,7 +29,7 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Background",
-    "path": "folders/Objects/Background.yy",
+    "name": "Unused",
+    "path": "folders/Objects/Unused.yy",
   },
 }

@@ -1,4 +1,7 @@
-
+if (room == editor_room)
+{
+	exit;
+}
 draw_set_font(lang_get_font("bigfont"));
 draw_set_halign(fa_center);
 draw_set_color(c_white);
@@ -19,7 +22,12 @@ combofill_y = _cy;
 shader_set(global.Pal_Shader);
 pal_swap_set(spr_tv_combofillpalette, (!global.combodropped && global.prank_enemykilled) ? 2 : 1, false);
 draw_sprite(spr_tv_combobubblefill, combofill_index, combofill_x, combofill_y);
-pal_swap_set(spr_tv_combopalette, (obj_player1.ispeppino && !global.swapmode) ? 0 : 1, false);
+var pal = 0;
+if !obj_player1.ispeppino || global.swapmode
+	pal = 1;
+if obj_player1.char == "S"
+	pal = 2;
+pal_swap_set(spr_tv_combopalette, pal, false);
 lang_draw_sprite(spr_tv_combobubble, 0, _cx, _cy);
 draw_set_font(global.combofont2);
 draw_set_halign(fa_left);
@@ -35,7 +43,7 @@ for (var i = num; i > 0; i--)
 	_tx -= 22;
 	_ty -= 8;
 }
-if (room != rm_blank)
+if (room != strongcold_endscreen)
 {
 	draw_sprite_ext(spr_tv_bgfinal, tv_bg_index, tv_x + collect_x, tv_y + collect_y + hud_posY, 1, 1, 0, c_white, alpha);
 	pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, patterntexture);
@@ -57,11 +65,25 @@ if (room != rm_blank)
 		}
 		draw_sprite_ext(spr, image_index, tv_x + collect_x, tv_y + collect_y + hud_posY, 1, 1, 0, c_white, alpha);
 	}
+	if (obj_player1.char == "S")
+	{
+		pal_swap_set(spr_tv_palette, 2, false);
+		var spr = spr_tv_empty;
+		if (sprite_index == spr_tv_open)
+		{
+			spr = sprite_index;
+		}
+		draw_sprite_ext(spr, image_index, tv_x + collect_x, tv_y + collect_y + hud_posY, 1, 1, 0, c_white, alpha);
+	}
 	if (state == states.whitenoise)
 	{
 		if (!obj_player1.ispeppino || global.swapmode)
 		{
 			pal_swap_set(spr_tv_palette, 1, false);
+		}
+		if (obj_player1.char == "S")
+		{
+			pal_swap_set(spr_tv_palette, 2, false);
 		}
 		draw_sprite(spr_tv_whitenoise, tv_trans, tv_x + collect_x, tv_y + collect_y + hud_posY);
 	}
@@ -91,6 +113,16 @@ draw_clear_alpha(c_black, 0);
 draw_set_font(font1);
 draw_set_halign(fa_left);
 draw_set_valign(fa_middle);
+if (bubblespr == spr_tv_bubble)
+{
+	promptx -= promptspd;
+	if (bubblespr != spr_tv_bubbleclose && promptx < (350 - string_width(prompt)))
+	{
+		bubblespr = spr_tv_bubbleclose;
+		bubbleindex = 0;
+	}
+	draw_text_color(promptx - 350, 50, prompt, c_black, c_black, c_black, c_black, 1);
+}
 draw_set_halign(fa_left);
 surface_reset_target();
 draw_surface(promptsurface, SCREEN_WIDTH - 610, 0);

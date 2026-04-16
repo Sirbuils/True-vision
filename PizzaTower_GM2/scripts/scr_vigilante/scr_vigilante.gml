@@ -482,18 +482,18 @@ function scr_vigilante_walk()
 				estampedecooldown = 30;
 				sprite_index = spr_vigilante_intro2;
 				image_index = 16;
-				//with (instance_create(464, 195, obj_ladderhorizontal))
-				//{
-				//	dir = other.image_xscale;
-				//	if (other.phase == 1)
-				//	{
-				//		spd = 3;
-				//	}
-				//	else
-				//	{
-				//		spd = 5;
-				//	}
-				//}
+				with (instance_create(464, 195, obj_ladderhorizontal))
+				{
+					dir = other.image_xscale;
+					if (other.phase == 1)
+					{
+						spd = 3;
+					}
+					else
+					{
+						spd = 5;
+					}
+				}
 				break;
 			case vigilante_attacks.wait:
 				waitbuffer = attack[1];
@@ -747,10 +747,10 @@ function scr_vigilante_estampede()
 			if (!b)
 			{
 				state = states.walk;
-				//with (obj_ladderhorizontal)
-				//{
-				//	destroy = true;
-				//}
+				with (obj_ladderhorizontal)
+				{
+					destroy = true;
+				}
 			}
 		}
 	}
@@ -1436,7 +1436,7 @@ function scr_vigilante_hit()
 		if (hitLag > 0)
 		{
 			instance_destroy(obj_junk);
-			//instance_destroy(obj_ladderhorizontal);
+			instance_destroy(obj_ladderhorizontal);
 			instance_destroy(obj_cowstampede);
 			with (obj_cowspawner)
 			{

@@ -11,6 +11,7 @@ if (place_meeting(x, y - 1, obj_player))
 					if (state != states.trashroll)
 					{
 						fmod_event_one_shot("event:/sfx/misc/watersplash");
+						scr_losepoints();
 						sprite_index = spr_scaredjump1;
 						image_index = 0;
 						image_speed = 0.35;

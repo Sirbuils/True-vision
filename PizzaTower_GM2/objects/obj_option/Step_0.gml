@@ -164,7 +164,7 @@ if (slidebuffer > 0)
 {
 	slidebuffer--;
 }
-if ((key_back || key_slap2 || keyboard_check_pressed(vk_escape)) && !instance_exists(obj_keyconfig))
+if ((key_back || key_slap2 || keyboard_check_pressed(vk_escape)) && !instance_exists(obj_keyconfig) && !instance_exists(obj_audioconfig))
 {
 	fmod_event_one_shot("event:/sfx/ui/back");
 	if (menu == menuids.categories)

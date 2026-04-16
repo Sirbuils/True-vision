@@ -44,6 +44,10 @@ if (instance_exists(obj_inputAssigner) && obj_inputAssigner.player_input_device[
 {
 	cr = -1;
 }
+if (room == editor_room)
+{
+	cr = -1;
+}
 if (cr != noone)
 {
 	window_set_cursor(cr);

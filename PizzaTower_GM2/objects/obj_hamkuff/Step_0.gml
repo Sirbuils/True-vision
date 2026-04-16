@@ -1,4 +1,7 @@
-
+if (room == rm_editor)
+{
+	exit;
+}
 switch (state)
 {
 	case states.idle:
@@ -210,18 +213,18 @@ if (state != states.walk && state != states.blockstance)
 	attract_player = false;
 }
 var _dis = 300;
-if (state == states.walk && obj_player1.isgustavo && !obj_player1.cutscene && obj_player1.state != states.spaceshuttle && obj_player1.state != states.taxi && ((distance_to_object(obj_player) < _dis && obj_player1.brick) || (distance_to_object(obj_brickcomeback) < _dis && instance_exists(obj_brickcomeback) && !obj_brickcomeback.trapped) || distance_to_object(obj_brickball) < _dis))
+if (state == states.walk && obj_player1.isgustavo && !obj_player1.cutscene && obj_player1.state != states.spaceshuttle && obj_player1.state != states.taxi && ((distance_to_object(obj_player) < _dis && obj_player1.brick) || distance_to_object(obj_ratmountgroundpound) < _dis || (distance_to_object(obj_brickcomeback) < _dis && instance_exists(obj_brickcomeback) && !obj_brickcomeback.trapped) || distance_to_object(obj_brickball) < _dis))
 {
 	state = states.blockstance;
 	sprite_index = spr_hamkuff_chain1;
 	var x1 = obj_player1.x;
 	var y1 = obj_player1.y;
-	//if (instance_exists(obj_ratmountgroundpound))
-	//{
-	//	x1 = obj_ratmountgroundpound.x;
-	//	y1 = obj_ratmountgroundpound.y;
-	//}
-	if (instance_exists(obj_brickcomeback))
+	if (instance_exists(obj_ratmountgroundpound))
+	{
+		x1 = obj_ratmountgroundpound.x;
+		y1 = obj_ratmountgroundpound.y;
+	}
+	else if (instance_exists(obj_brickcomeback))
 	{
 		x1 = obj_brickcomeback.x;
 		y1 = obj_brickcomeback.y;
@@ -235,7 +238,7 @@ if (state == states.walk && obj_player1.isgustavo && !obj_player1.cutscene && ob
 	{
 		sprite_index = spr_morthookgrabeffect;
 	}
-	//instance_destroy(obj_ratmountgroundpound, false);
+	instance_destroy(obj_ratmountgroundpound, false);
 	instance_destroy(obj_brickcomeback, false);
 	instance_destroy(obj_brickball, false);
 	with (instance_create(x1, y1, obj_brickcomeback))

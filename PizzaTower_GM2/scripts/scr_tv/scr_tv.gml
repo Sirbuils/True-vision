@@ -115,7 +115,12 @@ function tv_get_palette()
 	{
 		exit;
 	}
-	var _info = obj_player1.ispeppino ? get_pep_palette_info() : get_noise_palette_info();
+	var palfunction = get_pep_palette_info()
+	if !obj_player1.ispeppino
+		palfunction = get_noise_palette_info();
+	if obj_player1.char == "S"
+		palfunction = get_snick_palette_info();
+	var _info = palfunction;
 	spr_palette = _info.spr_palette;
 	if (obj_player1.isgustavo && obj_player1.ispeppino)
 	{

@@ -8,7 +8,7 @@ if (room == tower_entrancehall)
 {
 	alarm[0] = 2;
 }
-if (room != rm_blank)
+if (room != rm_editor)
 {
 	depth = 50;
 }
@@ -25,4 +25,10 @@ handsprite = spr_grabbiehand_idle;
 handindex = 0;
 uparrow = false;
 uparrowID = noone;
+if (obj_player.char == "S")
+{
+	instance_destroy();
+	instance_create(x,y + 82,obj_snicklevelend);
+}
+
 snd = false;

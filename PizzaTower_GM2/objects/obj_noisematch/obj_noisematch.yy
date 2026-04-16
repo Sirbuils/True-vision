@@ -2,7 +2,10 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_noisematch",
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_noisehotairmatch",
+    "path": "sprites/spr_noisehotairmatch/spr_noisehotairmatch.yy",
+  },
   "solid": false,
   "visible": true,
   "managed": true,
@@ -24,11 +27,12 @@
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"obj_haystack","path":"objects/obj_haystack/obj_haystack.yy",},},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Noise",
-    "path": "folders/Objects/Boss/Noise.yy",
+    "name": "Unused",
+    "path": "folders/Objects/Unused.yy",
   },
 }

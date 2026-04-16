@@ -174,6 +174,11 @@ function palette_unlock(_achievement, _palname, _palindex, _texture = noone, _is
 					sprite_index = spr_newclothesN;
 					spr_palette = spr_noisepalette;
 				}
+				if (obj_player1.char == "S")
+				{
+					sprite_index = spr_newclothesS;
+					spr_palette = spr_snickpalette;
+				}
 				paletteselect = _palindex;
 				texture = _texture;
 			}

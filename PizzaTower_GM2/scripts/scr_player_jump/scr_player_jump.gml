@@ -6,7 +6,7 @@ function state_player_jump()
 	var accel = 0.5;
 	var deccel = 0.1;
 	var jumpspeed = -11;
-	var machspeed = 6;
+	var machspeed = char == "S" ? 8 : 6;
 	landAnim = true;
 	if (!momemtum)
 	{
@@ -92,7 +92,7 @@ function state_player_jump()
 			if (place_meeting(x + xscale, y, obj_solid))
 			{
 				fmod_event_one_shot_3d("event:/sfx/pep/step", x, y);
-				//sprite_index = spr_playerN_wallclingstart;
+				sprite_index = spr_playerN_wallclingstart;
 				image_index = 0;
 				state = states.hang;
 				xscale *= -1;
@@ -244,6 +244,9 @@ function state_player_jump()
 				case spr_shotgunjump:
 					sprite_index = spr_shotgunfall;
 					break;
+				case spr_playerV_superjump:
+					sprite_index = spr_playerV_fall;
+					break;
 				case spr_jump:
 					sprite_index = spr_fall;
 					break;
@@ -262,14 +265,17 @@ function state_player_jump()
 				case spr_player_shotgunjump1:
 					sprite_index = spr_player_shotgunjump2;
 					break;
-				//case spr_shotgun_shootair:
-				//	sprite_index = spr_shotgunfall;
-				//	break;
-				//case spr_shotgunshoot:
-				//	sprite_index = spr_shotgunfall;
-				//	break;
+				case spr_shotgun_shootair:
+					sprite_index = spr_shotgunfall;
+					break;
+				case spr_shotgunshoot:
+					sprite_index = spr_shotgunfall;
+					break;
 				case spr_stompprep:
 					sprite_index = spr_stomp;
+					break;
+				case spr_player_groundpoundjump:
+					sprite_index = spr_fall;
 					break;
 			}
 		}
@@ -344,7 +350,7 @@ function state_player_jump()
 			shake_mag_acc = 30 / room_speed;
 		}
 	}
-	if (input_buffer_slap > 0 && !key_up && sprite_index != spr_suplexbump && shotgunAnim == false && !global.pistol)
+	if (input_buffer_slap > 0 && !key_up && sprite_index != spr_suplexbump && shotgunAnim == false && !global.pistol && char != "S")
 	{
 		input_buffer_slap = 0;
 		particle_set_scale(particletypes.jumpdust, xscale, 1);
@@ -364,13 +370,11 @@ function state_player_jump()
 		sprite_index = spr_breakdanceuppercut;
 		fmod_event_instance_play(snd_uppercut);
 		if (ispeppino)
-		{
 			vsp = -10;
-		}
-		else
-		{
+		if (!ispeppino)
 			vsp = -21;
-		}
+		if (char == "S")
+			vsp = -16;
 		movespeed = hsp;
 		if (key_attack && grounded)
 		{
@@ -473,12 +477,13 @@ function state_player_jump()
 			}
 		}
 	}
+	scr_snick_crashdash();
 	switch (character)
 	{
 		case "P":
 			if (key_attack && grounded && fallinganimation < 40)
 			{
-				sprite_index = spr_mach1;
+				sprite_index = char == "S" ? spr_mach : spr_mach1;
 				image_index = 0;
 				state = states.mach2;
 				if (movespeed < machspeed)

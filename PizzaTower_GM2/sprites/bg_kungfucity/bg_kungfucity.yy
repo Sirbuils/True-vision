@@ -21,8 +21,8 @@
   "width": 1060,
   "height": 640,
   "textureGroupId": {
-    "name": "hubgroup",
-    "path": "texturegroups/hubgroup",
+    "name": "kungfugroup",
+    "path": "texturegroups/kungfugroup",
   },
   "swatchColours": null,
   "gridX": 0,
@@ -68,7 +68,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Hub",
-    "path": "folders/Sprites/World/Floor 4/Hub.yy",
+    "name": "Floor 4",
+    "path": "folders/Sprites/World/Floor 4.yy",
   },
 }

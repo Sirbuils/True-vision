@@ -1,4 +1,7 @@
-
+if (room == rm_editor)
+{
+	exit;
+}
 switch (state)
 {
 	case states.idle:
@@ -140,35 +143,35 @@ switch (state)
 		}
 		break;
 }
-//if (elite)
-//{
-//	if (state == states.walk)
-//	{
-//		if ((player.x > (x - 200) && player.x < (x + 200)) && (y <= (player.y + 60) && y >= (player.y - 60)))
-//		{
-//			if (state != states.rage && ragebuffer == 0)
-//			{
-//				hitboxcreate = false;
-//				state = states.rage;
-//				sprite_index = spr_soldier_knife;
-//				if (x != player.x)
-//				{
-//					image_xscale = -sign(x - player.x);
-//				}
-//				ragebuffer = 100;
-//				image_index = 0;
-//				image_speed = 0.5;
-//				flash = true;
-//				alarm[4] = 5;
-//				create_heatattack_afterimage(x, y, sprite_index, image_index, image_xscale);
-//			}
-//		}
-//	}
-//	if (ragebuffer > 0)
-//	{
-//		ragebuffer--;
-//	}
-//}
+if (elite)
+{
+	if (state == states.walk)
+	{
+		if ((player.x > (x - 200) && player.x < (x + 200)) && (y <= (player.y + 60) && y >= (player.y - 60)))
+		{
+			if (state != states.rage && ragebuffer == 0)
+			{
+				hitboxcreate = false;
+				state = states.rage;
+				sprite_index = spr_soldier_knife;
+				if (x != player.x)
+				{
+					image_xscale = -sign(x - player.x);
+				}
+				ragebuffer = 100;
+				image_index = 0;
+				image_speed = 0.5;
+				flash = true;
+				alarm[4] = 5;
+				create_heatattack_afterimage(x, y, sprite_index, image_index, image_xscale);
+			}
+		}
+	}
+	if (ragebuffer > 0)
+	{
+		ragebuffer--;
+	}
+}
 if (state != states.grabbed)
 {
 	depth = 0;

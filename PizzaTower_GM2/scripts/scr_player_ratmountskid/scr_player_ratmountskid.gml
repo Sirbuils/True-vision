@@ -18,7 +18,7 @@ function scr_player_ratmountskid()
 		movespeed = 0;
 		state = states.ratmount;
 	}
-	if (input_buffer_jump > 0 && can_jump)
+	if (input_buffer_jump > 0 && can_jump && sprite_index != spr_player_ratmountswallow)
 	{
 		particle_set_scale(particletypes.highjumpcloud2, xscale, 1);
 		create_particle(x, y, particletypes.highjumpcloud2, 0);

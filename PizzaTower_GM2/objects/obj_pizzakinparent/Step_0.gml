@@ -6,7 +6,7 @@ if (obj_player.state == states.pizzathrow)
 playerid = obj_player1.spotlight ? obj_player1 : obj_player2;
 if (state != states.backbreaker)
 {
-	if (object_index != obj_pizzakinpineapple || (sprite_index != spr_monsterpineapple_pose1 && sprite_index != spr_monsterpineapple_pose2 && sprite_index != spr_monsterpineapple_pose3))
+	if (object_index != obj_pizzakinpineapple || (sprite_index != spr_monsterpineapple_smile && sprite_index != spr_monsterpineapple_pose1 && sprite_index != spr_monsterpineapple_pose2 && sprite_index != spr_monsterpineapple_pose3))
 	{
 		if (sprite_index == spr_intro && ANIMATION_END)
 		{
@@ -47,7 +47,7 @@ else
 	if (sprite_index != spr_intro)
 	{
 		var s = obj_player1.sprite_index;
-		if (s == obj_player1.spr_supertaunt1 || s == obj_player1.spr_supertaunt2 || s == obj_player1.spr_supertaunt3 || s == obj_player1.spr_supertaunt4 || s == 2685)
+		if (s == obj_player1.spr_supertaunt1 || s == obj_player1.spr_supertaunt2 || s == obj_player1.spr_supertaunt3 || s == obj_player1.spr_supertaunt4 || s == spr_player_ratmountsupertaunt)
 		{
 			sprite_index = spr_intro;
 			image_index = 0;

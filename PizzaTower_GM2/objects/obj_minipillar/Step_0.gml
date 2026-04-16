@@ -1,4 +1,8 @@
-
+if (room == rm_editor)
+{
+	mask_index = spr_minipillarwoke;
+	exit;
+}
 if (player < 2)
 {
 	if (place_meeting(xstart, ystart, obj_player1) && obj_player1.state != states.chainsaw)

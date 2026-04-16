@@ -57,7 +57,7 @@ function scr_player_fireass()
 				movespeed = Approach(movespeed, 0, 0.1);
 			}
 		}
-		if (place_meeting(x, y + 1, obj_tutorialblock))
+		if (place_meeting(x, y + 1, obj_haystack))
 		{
 			vsp = -20;
 		}
@@ -86,7 +86,7 @@ function scr_player_fireass()
 	{
 		sprite_index = spr_scaredjump2;
 	}
-	if (sprite_index == spr_fireassground)
+	if (sprite_index == spr_fireassground || sprite_index == spr_bombpepend)
 	{
 		hsp = xscale * movespeed;
 		if (movespeed > 0)
@@ -105,7 +105,7 @@ function scr_player_fireass()
 			image_index = 0;
 		}
 	}
-	if (sprite_index == spr_fireassground)
+	if (sprite_index == spr_fireassend)
 	{
 		if (ANIMATION_END)
 		{

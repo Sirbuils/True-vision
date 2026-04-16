@@ -10,7 +10,7 @@ function scr_player_slap()
 		}
 	}
 	move = key_left + key_right;
-	if (sprite_index != yousuck)
+	if (sprite_index != spr_player_slapdash)
 	{
 		if (!place_meeting(x, y + 1, obj_railparent))
 		{
@@ -26,7 +26,7 @@ function scr_player_slap()
 	{
 		hsp = xscale * movespeed;
 	}
-	if (sprite_index != yousuck)
+	if (sprite_index != spr_player_slapdash)
 	{
 		if (move == 0 || scr_solid(x + hsp, y))
 		{
@@ -46,7 +46,7 @@ function scr_player_slap()
 		}
 	}
 	landAnim = false;
-	if (key_slap2)
+	if (key_slap2 && sprite_index != spr_player_slapup && sprite_index != spr_player_slapdash)
 	{
 		slapbuffer = 0;
 	}
@@ -54,7 +54,7 @@ function scr_player_slap()
 	{
 		slapbuffer++;
 	}
-	if (sprite_index != yousuck)
+	if (sprite_index != spr_player_slapup && sprite_index != spr_player_slapdash)
 	{
 		if (ANIMATION_END && slapbuffer < 8)
 		{
@@ -128,20 +128,20 @@ function scr_player_slap()
 			}
 		}
 	}
-	//if (floor(image_index) == 1 && !instance_exists(obj_slaphitbox2))
-	//{
-	//	//if (sprite_index == spr_player_slapup)
-	//	//{
-	//	//	with (instance_create(x, y, obj_slaphitbox2))
-	//	//	{
-	//	//		sprite_index = spr_player_hitboxslapup;
-	//	//	}
-	//	//}
-	//	//else
-	//	//{
-	//		instance_create(x, y, obj_slaphitbox2);
-	//	//}
-	//}
+	if (floor(image_index) == 1 && !instance_exists(obj_slaphitbox2))
+	{
+		if (sprite_index == spr_player_slapup)
+		{
+			with (instance_create(x, y, obj_slaphitbox2))
+			{
+				sprite_index = spr_player_hitboxslapup;
+			}
+		}
+		else
+		{
+			instance_create(x, y, obj_slaphitbox2);
+		}
+	}
 	if (ANIMATION_END && slapbuffer == 8)
 	{
 		if (mach2 >= 35)

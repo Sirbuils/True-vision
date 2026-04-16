@@ -68,7 +68,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Effects",
-    "path": "folders/Sprites/Effects.yy",
+    "name": "Oregano Desert",
+    "path": "folders/Sprites/World/Floor 2/Oregano Desert.yy",
   },
 }

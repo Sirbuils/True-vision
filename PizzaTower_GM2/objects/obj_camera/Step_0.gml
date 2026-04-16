@@ -1,4 +1,7 @@
-
+if (room == editor_room)
+{
+	exit;
+}
 player = (obj_player1.spotlight == true) ? obj_player1 : obj_player2;
 if (!instance_exists(obj_pizzaball))
 {
@@ -16,6 +19,15 @@ if (healthshaketime > 0)
 if (healthshaketime == 0)
 {
 	healthshake = 0;
+}
+if (obj_player1.character == "V")
+{
+	if (healthold != global.playerhealth)
+	{
+		playerhealthup = healthold < global.hp;
+		healthshaketime = 30;
+		healthold = global.playerhealth;
+	}
 }
 else if (obj_player1.character == "P")
 {
@@ -41,7 +53,7 @@ if (floor(image_index) == 10)
 {
 	shoving = false;
 }
-if (room == Longintro || room == Mainmenu || room == rank_room || room == timesuproom || room == Realtitlescreen || room == characterselect || room == hub_loadingscreen || (string_copy(room_get_name(room), 1, 5) == "tower" && !global.panic))
+if (room == strongcold_endscreen || room == Longintro || room == Mainmenu || room == rm_levelselect || room == rank_room || room == timesuproom || room == Realtitlescreen || room == characterselect || room == hub_loadingscreen || (string_copy(room_get_name(room), 1, 5) == "tower" && !global.panic))
 {
 	visible = false;
 }
@@ -87,12 +99,12 @@ if (shoving == true && image_index >= 3 && bang == false)
 	{
 		if ((obj_player1.spotlight == false && obj_player1.character == "P") || (obj_player1.spotlight == true && obj_player2.character == "P"))
 		{
-			//sprite = spr_pepinoHUDscream;
+			sprite = spr_pepinoHUDscream;
 			hsp = random_range(-1, -5);
 		}
 		else
 		{
-			//sprite = spr_noiseHUD_panic;
+			sprite = spr_noiseHUD_panic;
 			hsp = random_range(1, 5);
 		}
 	}
@@ -105,7 +117,7 @@ if (shoving == false)
 if (global.seconds <= 0 && global.minutes <= 0 && ded == false)
 {
 	alarm[1] = -1;
-	if (global.miniboss)
+	if (global.miniboss || instance_exists(obj_toppinwarrior))
 	{
 		alarm[2] = 1;
 	}
@@ -234,7 +246,7 @@ if (instance_exists(player) && !lock && player.state != states.timesup && player
 			var cam_x, cam_y;
 			if (targetgolf == noone)
 			{
-				if (!global.coop || room == characterselect || room == Realtitlescreen)
+				if (!global.coop || room == characterselect || room == rm_levelselect || room == Realtitlescreen)
 				{
 					cam_x = (tx - (cam_width / 2)) + chargecamera + p2pdistancex;
 					cam_y = ty - (cam_height / 2) - 50;

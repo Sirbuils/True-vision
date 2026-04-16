@@ -40,6 +40,7 @@ if (other.cutscene == false && other.state != states.actor && state != states.ac
 		}
 		if (state == states.freefall && other.hurted == false && other.state != states.stunned && other.state != states.hurt && hurted == false)
 		{
+			scr_changetoppings();
 			obj_player1.depth = -6;
 			obj_player2.depth = -7;
 			obj_player1.state = states.stunned;

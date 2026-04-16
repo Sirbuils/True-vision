@@ -60,19 +60,19 @@ function scr_robot_attack()
 {
 	sprite_index = spr_monstershroom_idle;
 	hsp = 0;
-	//if (!instance_exists(throw_inst))
-	//{
-	//	throw_inst = instance_create(x, y, obj_robotmonsterhand);
-	//	with (throw_inst)
-	//	{
-	//		fake = other.fake;
-	//		targetRoom = other.targetRoom;
-	//		targetDoor = other.targetDoor;
-	//		angle = point_direction(x, y, other.playerinst.x, other.playerinst.y);
-	//		baddieID = other.id;
-	//		monsterid = other.monsterid;
-	//	}
-	//}
+	if (!instance_exists(throw_inst))
+	{
+		throw_inst = instance_create(x, y, obj_robotmonsterhand);
+		with (throw_inst)
+		{
+			fake = other.fake;
+			targetRoom = other.targetRoom;
+			targetDoor = other.targetDoor;
+			angle = point_direction(x, y, other.playerinst.x, other.playerinst.y);
+			baddieID = other.id;
+			monsterid = other.monsterid;
+		}
+	}
 }
 
 function scr_robot_detect()

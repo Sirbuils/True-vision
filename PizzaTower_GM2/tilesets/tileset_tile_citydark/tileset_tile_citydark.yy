@@ -14,8 +14,8 @@
   "tilevsep": 0,
   "spriteNoExport": false,
   "textureGroupId": {
-    "name": "backgroundgroup",
-    "path": "texturegroups/backgroundgroup",
+    "name": "Default",
+    "path": "texturegroups/Default",
   },
   "out_tilehborder": 0,
   "out_tilevborder": 0,

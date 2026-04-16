@@ -21,8 +21,8 @@
   "width": 100,
   "height": 100,
   "textureGroupId": {
-    "name": "smallgroup",
-    "path": "texturegroups/smallgroup",
+    "name": "hubgroup",
+    "path": "texturegroups/hubgroup",
   },
   "swatchColours": null,
   "gridX": 0,
@@ -68,7 +68,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Everything",
-    "path": "folders/Sprites/World/Everything.yy",
+    "name": "World",
+    "path": "folders/Sprites/World.yy",
   },
 }

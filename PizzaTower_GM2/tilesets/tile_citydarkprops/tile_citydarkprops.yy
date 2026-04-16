@@ -14,8 +14,8 @@
   "tilevsep": 0,
   "spriteNoExport": false,
   "textureGroupId": {
-    "name": "backgroundgroup",
-    "path": "texturegroups/backgroundgroup",
+    "name": "citygroup",
+    "path": "texturegroups/citygroup",
   },
   "out_tilehborder": 2,
   "out_tilevborder": 2,

@@ -62,6 +62,16 @@ function scr_pizzagoblin_throw()
 					instance_create(x, y, obj_noisegoblin_arrow);
 				}
 				break;
+			case obj_cheeserobot:
+				with (instance_create(x, y, obj_cheeseblob))
+				{
+					sprite_index = spr_cheeserobot_goop;
+					image_xscale = other.image_xscale;
+					hsp = other.image_xscale * 8;
+					vsp = 0;
+					grav = 0;
+				}
+				break;
 			case obj_spitcheese:
 				if (spitcheesespr == spr_spitcheese_spit)
 				{
@@ -83,6 +93,7 @@ function scr_pizzagoblin_throw()
 				}
 				break;
 			case obj_trash:
+			case obj_invtrash:
 				with (instance_create(x + (image_xscale * 6), y - 6, obj_cheeseball))
 				{
 					image_xscale = other.image_xscale;
@@ -104,6 +115,16 @@ function scr_pizzagoblin_throw()
 					image_xscale = other.image_xscale;
 				}
 				break;
+			case obj_kentukylenny:
+				with (instance_create(x + (other.image_xscale * 8), y, obj_kentukylenny_projectile))
+				{
+					repeat (3)
+					{
+						instance_create(x, y, obj_firemouthflame);
+					}
+					image_xscale = other.image_xscale;
+				}
+				break;
 			case obj_pizzard:
 				with (instance_create(x, y, obj_pizzard_bolt))
 				{
@@ -114,7 +135,7 @@ function scr_pizzagoblin_throw()
 			case obj_swedishmonkey:
 				if (elite)
 				{
-					with (instance_create(x, y, obj_slipnslide))
+					with (instance_create(x, y, obj_evilbanana))
 					{
 						baddieID = other.id;
 						image_xscale = other.image_xscale;
@@ -133,6 +154,13 @@ function scr_pizzagoblin_throw()
 					}
 				}
 				with (obj_slipnslide)
+				{
+					if (baddieID == other.id)
+					{
+						banana += 1;
+					}
+				}
+				with (obj_evilbanana)
 				{
 					if (baddieID == other.id)
 					{
@@ -170,6 +198,7 @@ function scr_pizzagoblin_throw()
 					hsp = other.image_xscale * 5;
 				}
 				break;
+			case obj_thug_blue:
 			case obj_thug_red:
 				with (instance_create(x + (8 * image_xscale), y, obj_robotknife))
 				{
@@ -190,6 +219,14 @@ function scr_pizzagoblin_throw()
 				with (instance_create(x + (50 * image_xscale), y + 20, obj_smokingprojectile))
 				{
 					image_xscale = other.image_xscale;
+				}
+				break;
+			case obj_thug_green:
+				with (instance_create(x + (8 * image_xscale), y, obj_junkenemy))
+				{
+					image_xscale = other.image_xscale;
+					hsp = other.image_xscale * 7;
+					vsp = -8;
 				}
 				break;
 			case obj_miniufo:

@@ -122,16 +122,16 @@ if (grabbed == true && !ratgrabbed)
 		{
 			vsp = 15;
 		}
-		//if (playerid.sprite_index == spr_player_diagonaldownthrow)
-		//{
-		//	hsp = -image_xscale * 10;
-		//	vsp = 15;
-		//}
-		//if (playerid.sprite_index == spr_player_diagonalupthrow)
-		//{
-		//	hsp = -image_xscale * 10;
-		//	vsp = -15;
-		//}
+		if (playerid.sprite_index == spr_player_diagonaldownthrow)
+		{
+			hsp = -image_xscale * 10;
+			vsp = 15;
+		}
+		if (playerid.sprite_index == spr_player_diagonalupthrow)
+		{
+			hsp = -image_xscale * 10;
+			vsp = -15;
+		}
 		instance_create(x, y, obj_slapstar);
 		instance_create(x, y, obj_baddiegibs);
 		with (obj_camera)

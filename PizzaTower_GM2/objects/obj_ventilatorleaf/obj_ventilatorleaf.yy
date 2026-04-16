@@ -31,7 +31,7 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Gimmicks",
-    "path": "folders/Objects/Room Structure/Level Structure/Gimmicks.yy",
+    "name": "Unreferenced",
+    "path": "folders/Objects/Unused/Unreferenced.yy",
   },
 }

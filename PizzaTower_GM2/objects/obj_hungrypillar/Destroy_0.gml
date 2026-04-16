@@ -1,4 +1,7 @@
-
+if (room == rm_editor)
+{
+	exit;
+}
 if (ds_list_find_index(global.saveroom, id) == -1 && global.snickchallenge == false)
 {
 	if (room == tower_finalhallway)
@@ -161,6 +164,18 @@ if (ds_list_find_index(global.saveroom, id) == -1 && global.snickchallenge == fa
 			global.minutes = 3;
 			global.seconds = 15;
 			break;
+		case strongcold_1:
+			global.minutes = 4;
+			global.seconds = 0;
+			break;
+		case dragonlair_1:
+			global.minutes = 0;
+			global.seconds = 59;
+			break;
+		case desert_16:
+			global.minutes = 2;
+			global.seconds = 30;
+			break;
 		case graveyard_6:
 			global.minutes = 3;
 			global.seconds = 59;
@@ -168,6 +183,14 @@ if (ds_list_find_index(global.saveroom, id) == -1 && global.snickchallenge == fa
 		case farm_11:
 			global.minutes = 3;
 			global.seconds = 59;
+			break;
+		case pinball_17:
+			global.minutes = 3;
+			global.seconds = 12;
+			break;
+		case beach_13:
+			global.minutes = 3;
+			global.seconds = 30;
 			break;
 		case forest_5:
 			global.minutes = 3;
@@ -185,6 +208,18 @@ if (ds_list_find_index(global.saveroom, id) == -1 && global.snickchallenge == fa
 			global.minutes = 5;
 			global.seconds = 30;
 			break;
+		case city_11:
+			global.minutes = 5;
+			global.seconds = 30;
+			break;
+		case mansion_7:
+			global.minutes = 5;
+			global.seconds = 30;
+			break;
+		case factory_10:
+			global.minutes = 6;
+			global.seconds = 30;
+			break;
 		case freezer_3:
 			global.minutes = 5;
 			global.seconds = 30;
@@ -192,6 +227,18 @@ if (ds_list_find_index(global.saveroom, id) == -1 && global.snickchallenge == fa
 		case war_1:
 			global.minutes = 6;
 			global.seconds = 30;
+			break;
+		case exit_1:
+			global.minutes = 9;
+			global.seconds = 59;
+			break;
+		case kidsparty_lastroom:
+			global.minutes = 3;
+			global.seconds = 30;
+			break;
+		case custom_lvl_room:
+			global.minutes = 2;
+			global.seconds = 15;
 			break;
 		default:
 			global.minutes = 5;

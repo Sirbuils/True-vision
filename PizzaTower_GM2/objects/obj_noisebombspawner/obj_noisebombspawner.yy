@@ -2,7 +2,10 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_noisebombspawner",
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_noise_throwbomb",
+    "path": "sprites/spr_noise_throwbomb/spr_noise_throwbomb.yy",
+  },
   "solid": false,
   "visible": true,
   "managed": true,
@@ -28,7 +31,7 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Noise",
-    "path": "folders/Objects/Boss/Noise.yy",
+    "name": "Unused",
+    "path": "folders/Objects/Unused.yy",
   },
 }

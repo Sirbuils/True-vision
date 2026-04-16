@@ -7,7 +7,7 @@ if (global.combotime > 0 && global.combo > 0)
 {
 	visualcombo = global.combo;
 }
-if (room == Realtitlescreen || room == Longintro || room == Mainmenu || room == rank_room || room == timesuproom  || room == characterselect || room == hub_loadingscreen || (string_copy(room_get_name(room), 1, 5) == "tower" && !global.panic))
+if (room == Realtitlescreen || room == Longintro || room == Mainmenu || room == rank_room || room == rm_levelselect || room == timesuproom || room == boss_room1 || room == characterselect || room == hub_loadingscreen || (string_copy(room_get_name(room), 1, 5) == "tower" && !global.panic))
 {
 	visible = false;
 	sprite_index = spr_tv_off;
@@ -30,31 +30,31 @@ if (targetgolf != noone && !view_visible[1])
 	view_visible[1] = true;
 	view_enabled = true;
 }
-//if (bubblespr != noone && bubblespr != spr_tv_bubbleclosed)
-//{
-//	if (prompt != noone)
-//	{
-//		prompt_buffer = 2;
-//	}
-//	bubbleindex += image_speed;
-//	if (floor(bubbleindex) == sprite_get_number(bubblespr))
-//	{
-//		bubbleindex = 0;
-//		switch (bubblespr)
-//		{
-//			case spr_tv_bubbleopen:
-//				bubblespr = spr_tv_bubble;
-//				break;
-//			case spr_tv_bubbleclose:
-//				bubblespr = spr_tv_bubbleclosed;
-//				if (prompt == noone || prompt == "")
-//				{
-//					bubblespr = noone;
-//				}
-//				break;
-//		}
-//	}
-//}
+if (bubblespr != noone && bubblespr != spr_tv_bubbleclosed)
+{
+	if (prompt != noone)
+	{
+		prompt_buffer = 2;
+	}
+	bubbleindex += image_speed;
+	if (floor(bubbleindex) == sprite_get_number(bubblespr))
+	{
+		bubbleindex = 0;
+		switch (bubblespr)
+		{
+			case spr_tv_bubbleopen:
+				bubblespr = spr_tv_bubble;
+				break;
+			case spr_tv_bubbleclose:
+				bubblespr = spr_tv_bubbleclosed;
+				if (prompt == noone || prompt == "")
+				{
+					bubblespr = noone;
+				}
+				break;
+		}
+	}
+}
 switch (state)
 {
 	case states.normal:
@@ -62,6 +62,10 @@ switch (state)
 		if (!obj_player1.ispeppino)
 		{
 			idlespr = spr_tv_idleN;
+		}
+		if (obj_player1.char == "S")
+		{
+			idlespr = spr_tv_idleS;
 		}
 		if (global.panic)
 		{
@@ -111,6 +115,15 @@ switch (state)
 				idlespr = spr;
 			}
 		}
+		if (obj_player1.char == "S")
+		{
+			var spr = sprite_get_name(idlespr);
+			spr = asset_get_index(concat(spr, "S"));
+			if (spr > -1)
+			{
+				idlespr = spr;
+			}
+		}
 		if (!_transfo)
 		{
 			with (obj_player1)
@@ -145,6 +158,7 @@ switch (state)
 				break;
 			case spr_tv_idle:
 			case spr_tv_idleN:
+			case spr_tv_idleS:
 				if (idleanim > 0)
 				{
 					idleanim--;
@@ -179,7 +193,7 @@ switch (state)
 					sprite_index = idlespr;
 					idleanim = 240 + (60 * irandom_range(-1, 2));
 				}
-				if (idlespr != spr_tv_idle && idlespr != spr_tv_idleN)
+				if (idlespr != spr_tv_idle && idlespr != spr_tv_idleN && idlespr != spr_tv_idleS)
 				{
 					sprite_index = idlespr;
 				}
@@ -195,26 +209,26 @@ switch (state)
 				prompt_buffer = prompt_max;
 				if (b[0] != "" && b[0] != noone)
 				{
-					bubblespr = noone;
+					bubblespr = spr_tv_bubbleopen;
 					bubbleindex = 0;
 					prompt = b[0];
 					promptspd = b[3];
 					promptx = promptxstart;
 				}
-				//else
-				//{
-				//	if (bubblespr != noone && bubblespr != spr_tv_bubbleclosed)
-				//	{
-				//		bubblespr = spr_tv_bubbleclose;
-				//	}
-				//	if (bubblespr == spr_tv_bubbleclosed)
-				//	{
-				//		bubblespr = noone;
-				//	}
-				//	bubbleindex = 0;
-				//	promptx = promptxstart;
-				//	prompt = noone;
-				//}
+				else
+				{
+					if (bubblespr != noone && bubblespr != spr_tv_bubbleclosed)
+					{
+						bubblespr = spr_tv_bubbleclose;
+					}
+					if (bubblespr == spr_tv_bubbleclosed)
+					{
+						bubblespr = noone;
+					}
+					bubbleindex = 0;
+					promptx = promptxstart;
+					prompt = noone;
+				}
 				if (b[1] == tv_prompttypes.normal)
 				{
 					sprite_index = spr_tv_open;
@@ -229,6 +243,15 @@ switch (state)
 							tvsprite = spr;
 						}
 					}
+					if (obj_player1.char == "S")
+					{
+						var spr = sprite_get_name(tvsprite);
+						spr = asset_get_index(concat(spr, "S"));
+						if (spr > -1)
+						{
+							tvsprite = spr;
+						}
+					}
 				}
 				else
 				{
@@ -237,6 +260,15 @@ switch (state)
 					{
 						var spr = sprite_get_name(tvsprite);
 						spr = asset_get_index(concat(spr, "N"));
+						if (spr > -1)
+						{
+							tvsprite = spr;
+						}
+					}
+					if (obj_player1.char == "S")
+					{
+						var spr = sprite_get_name(tvsprite);
+						spr = asset_get_index(concat(spr, "S"));
 						if (spr > -1)
 						{
 							tvsprite = spr;
@@ -356,6 +388,7 @@ switch (state)
 				break;
 			case spr_tv_exprcollect:
 			case spr_tv_exprcollectN:
+			case spr_tv_exprcollectS:
 			case spr_tv_happyG:
 				if (expressionbuffer > 0)
 				{
@@ -514,12 +547,12 @@ else if (global.panic)
 else
 {
 	pizzaface_sprite = spr_timer_pizzaface1;
-	//hand_sprite = spr_timer_hand1;
+	hand_sprite = spr_timer_hand1;
 	timer_y = timer_ystart + 212;
 }
 if (global.panic && global.fill < (chunkmax / 5))
 {
-	//hand_sprite = spr_timer_hand2;
+	hand_sprite = spr_timer_hand2;
 }
 barfill_x -= 0.2;
 if (barfill_x < -173)
@@ -530,10 +563,10 @@ if (pizzaface_index > (sprite_get_number(pizzaface_sprite) - 1))
 {
 	pizzaface_index = frac(pizzaface_index);
 }
-//if (hand_index > (sprite_get_number(hand_sprite) - 1))
-//{
-//	hand_index = frac(hand_index);
-//}
+if (hand_index > (sprite_get_number(hand_sprite) - 1))
+{
+	hand_index = frac(hand_index);
+}
 if (johnface_index > (sprite_get_number(johnface_sprite) - 1))
 {
 	johnface_index = frac(johnface_index);

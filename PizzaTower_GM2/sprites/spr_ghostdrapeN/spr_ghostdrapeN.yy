@@ -21,8 +21,8 @@
   "width": 100,
   "height": 100,
   "textureGroupId": {
-    "name": "smallgroup",
-    "path": "texturegroups/smallgroup",
+    "name": "playergroup",
+    "path": "texturegroups/playergroup",
   },
   "swatchColours": null,
   "gridX": 0,

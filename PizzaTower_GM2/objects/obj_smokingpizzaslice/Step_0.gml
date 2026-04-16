@@ -1,4 +1,7 @@
-
+if (room == rm_editor)
+{
+	exit;
+}
 if (bombreset > 0)
 {
 	bombreset--;

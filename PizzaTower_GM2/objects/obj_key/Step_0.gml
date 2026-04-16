@@ -1,4 +1,7 @@
-
+if (room == rm_editor)
+{
+	exit;
+}
 if (vsp < 12)
 {
 	vsp += grav;

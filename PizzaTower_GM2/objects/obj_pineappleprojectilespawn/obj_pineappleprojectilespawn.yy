@@ -31,7 +31,7 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Baddies",
-    "path": "folders/Objects/Baddies.yy",
+    "name": "Gimmicks",
+    "path": "folders/Objects/Room Structure/Level Structure/Gimmicks.yy",
   },
 }

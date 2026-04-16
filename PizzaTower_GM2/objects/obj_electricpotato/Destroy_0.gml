@@ -13,6 +13,10 @@ if (ds_list_find_index(global.baddieroom, id) == -1)
 	global.combo += 1;
 	global.enemykilled += 1;
 	global.combotime = 60;
+	if (instance_exists(obj_hardmode))
+	{
+		global.heatmeter_count++;
+	}
 	var combototal = 10 + floor(global.combo * 0.5);
 	global.collect += combototal;
 	global.comboscore += combototal;

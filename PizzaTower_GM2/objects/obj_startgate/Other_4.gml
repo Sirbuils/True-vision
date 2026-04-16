@@ -12,20 +12,27 @@ switch (targetRoom)
 	case dungeon_1:
 		world = 1;
 		break;
+	case desert_1:
 	case graveyard_1:
 	case farm_1:
+	case ufo_1:
 		world = 2;
 		break;
+	case beach_1:
 	case forest_1:
 	case minigolf_1:
 		world = 3;
 		break;
 	case space_1:
+	case city_1:
 	case sewer_1:
 	case war_1:
 		world = 4;
 		break;
+	case factory_1:
 	case freezer_1:
+	case mansion_1:
+	case kidsparty_entrance1:
 		world = 5;
 		break;
 	case boss_pepperman:

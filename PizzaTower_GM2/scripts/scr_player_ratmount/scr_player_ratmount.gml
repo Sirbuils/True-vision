@@ -259,7 +259,7 @@ function scr_player_ratmount()
 		vsp = -11;
 		jumpstop = false;
 	}
-	if (!grounded)
+	if (!grounded && sprite_index != spr_player_ratmountswallow)
 	{
 		state = states.ratmountjump;
 		jumpAnim = false;

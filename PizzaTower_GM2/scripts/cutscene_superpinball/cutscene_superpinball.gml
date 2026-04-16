@@ -25,11 +25,11 @@ function cutscene_superpinball_start()
 function cutscene_superpinball_middle()
 {
 	var t = noone;
-	//with (obj_superpinballmachine)
-	//{
-	//	x -= other.movespeed;
-	//	t = id;
-	//}
+	with (obj_superpinballmachine)
+	{
+		x -= other.movespeed;
+		t = id;
+	}
 	movespeed += 0.25;
 	with (obj_player)
 	{

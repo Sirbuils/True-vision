@@ -1,5 +1,5 @@
 draw_set_color(c_black);
-if (room != rm_blank)
+if (room != editor_room)
 {
 	draw_rectangle(0, -50, -50, room_height + 50, false);
 	draw_rectangle(room_width, -50, room_width + 50, room_height + 50, false);

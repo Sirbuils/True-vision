@@ -68,7 +68,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Wasteyard",
-    "path": "folders/Sprites/World/Floor 2/Wasteyard.yy",
+    "name": "Unused",
+    "path": "folders/Sprites/Unused.yy",
   },
 }

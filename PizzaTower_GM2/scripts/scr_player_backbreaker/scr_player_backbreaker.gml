@@ -20,11 +20,11 @@ function scr_player_backbreaker()
 		instance_destroy(parry_inst);
 	}
 	landAnim = false;
-	//if (sprite_index == spr_player_machfreefall && place_meeting(x, y + 1, obj_solid))
-	//{
-	//	state = states.machslide;
-	//	sprite_index = spr_player_crouchslide;
-	//}
+	if (sprite_index == spr_player_machfreefall && place_meeting(x, y + 1, obj_solid))
+	{
+		state = states.machslide;
+		sprite_index = spr_player_crouchslide;
+	}
 	if (sprite_index == spr_taunt || sprite_index == spr_supertaunt1 || sprite_index == spr_supertaunt2 || sprite_index == spr_supertaunt3 || sprite_index == spr_supertaunt4 || sprite_index == spr_player_ratmounttaunt || sprite_index == spr_player_ratmountsupertaunt)
 	{
 		if (supercharged == true && (sprite_index == spr_supertaunt1 || sprite_index == spr_supertaunt2 || sprite_index == spr_supertaunt3 || sprite_index == spr_supertaunt4 || sprite_index == spr_player_ratmountsupertaunt) && !instance_exists(obj_tauntaftereffectspawner))
@@ -135,6 +135,10 @@ function scr_player_backbreaker()
 			scr_change_farmers();
 		}
 	}
+	if (ANIMATION_END && sprite_index == spr_player_eatspaghetti)
+	{
+		state = states.normal;
+	}
 	if (ANIMATION_END && sprite_index == spr_player_throw)
 	{
 		state = states.normal;
@@ -147,21 +151,21 @@ function scr_player_backbreaker()
 	{
 		state = states.normal;
 	}
-	//if (key_jump && sprite_index == spr_player_phoneidle)
-	//{
-	//	global.panic = true;
-	//	sprite_index = spr_bossintro;
-	//	image_index = 0;
-	//	with (instance_create(x, y, obj_debris))
-	//	{
-	//		image_index = 0;
-	//		sprite_index = spr_phonedebris;
-	//	}
-	//}
-	//if (global.miniboss == true && sprite_index == spr_bossintro && ANIMATION_END)
-	//{
-	//	state = states.normal;
-	//}
+	if (key_jump && sprite_index == spr_player_phoneidle)
+	{
+		global.panic = true;
+		sprite_index = spr_bossintro;
+		image_index = 0;
+		with (instance_create(x, y, obj_debris))
+		{
+			image_index = 0;
+			sprite_index = spr_phonedebris;
+		}
+	}
+	if (global.miniboss == true && sprite_index == spr_bossintro && ANIMATION_END)
+	{
+		state = states.normal;
+	}
 	image_speed = 0.4;
 	if (supercharged && key_up)
 	{

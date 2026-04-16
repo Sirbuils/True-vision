@@ -9,7 +9,10 @@
   "solid": false,
   "visible": true,
   "managed": true,
-  "spriteMaskId": null,
+  "spriteMaskId": {
+    "name": "spr_pizzacollect1halloween",
+    "path": "sprites/spr_pizzacollect1halloween/spr_pizzacollect1halloween.yy",
+  },
   "persistent": false,
   "parentObjectId": null,
   "physicsObject": false,

@@ -68,7 +68,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "DEBUG",
-    "path": "folders/Sprites/DEBUG.yy",
+    "name": "Collision",
+    "path": "folders/Sprites/Room Structure/Collision.yy",
   },
 }

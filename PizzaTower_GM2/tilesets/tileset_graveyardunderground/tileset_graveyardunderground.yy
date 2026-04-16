@@ -273,7 +273,7 @@
     "TileSerialiseData": [],
   },
   "parent": {
-    "name": "Wasteyard",
-    "path": "folders/Tile Sets/Floor 2/Wasteyard.yy",
+    "name": "Unused",
+    "path": "folders/Tile Sets/Unused.yy",
   },
 }

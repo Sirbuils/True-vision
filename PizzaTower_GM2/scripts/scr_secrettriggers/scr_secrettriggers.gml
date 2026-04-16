@@ -62,14 +62,14 @@ function secret_check_touchall()
 
 function secret_check_trigger(_trigger)
 {
-	var _found = true;//was false
-	//with (obj_secrettrigger)
-	//{
-	//	if (trigger == _trigger && active)
-	//	{
-	//		_found = true;
-	//	}
-	//}
+	var _found = false;
+	with (obj_secrettrigger)
+	{
+		if (trigger == _trigger && active)
+		{
+			_found = true;
+		}
+	}
 	if (_found)
 	{
 		trace(
@@ -84,7 +84,7 @@ function secret_open_portal(_trigger)
 {
 	with (obj_secretportal)
 	{
-		if (trigger == _trigger && ds_list_find_index(global.saveroom, id) == -1 && !place_meeting(x, y, obj_secretblock) && !place_meeting(x, y, obj_secretbigblock) && !place_meeting(x, y, obj_secretmetalblock) && !place_meeting(x, y, obj_secretdestroyable))
+		if (trigger == _trigger && ds_list_find_index(global.saveroom, id) == -1 && !place_meeting(x, y, obj_marbleblock) && !place_meeting(x, y, obj_secretblock) && !place_meeting(x, y, obj_secretbigblock) && !place_meeting(x, y, obj_secretmetalblock) && !place_meeting(x, y, obj_secretdestroyable))
 		{
 			active = true;
 		}

@@ -16,7 +16,7 @@ function scr_player_ratmounttumble()
 	{
 		state = states.ratmount;
 	}
-	if ((place_meeting(x + hsp, y, obj_solid) && !scr_solid_slope(x + hsp, y) && !place_meeting(x + hsp, y, obj_rattumble) && !place_meeting(x + hsp, y, obj_destructibles)) || place_meeting(x, y, obj_timedgate))
+	if ((place_meeting(x + hsp, y, obj_solid) && !scr_solid_slope(x + hsp, y) && !place_meeting(x + hsp, y, obj_rollblock) && !place_meeting(x + hsp, y, obj_rattumble) && !place_meeting(x + hsp, y, obj_destructibles)) || place_meeting(x, y, obj_timedgate))
 	{
 		state = states.ratmounthurt;
 		vsp = -5;
@@ -36,11 +36,11 @@ function scr_player_ratmounttumble()
 		gustavokicktimer = 5;
 		brick = false;
 		movespeed = hsp;
-		//with (instance_create(x, y + 50, obj_ratmountgroundpound))
-		//{
-		//	image_xscale = other.xscale;
-		//	image_index = 0;
-		//}
+		with (instance_create(x, y + 50, obj_ratmountgroundpound))
+		{
+			image_xscale = other.xscale;
+			image_index = 0;
+		}
 	}
 	if (input_buffer_jump > 0 && can_jump)
 	{

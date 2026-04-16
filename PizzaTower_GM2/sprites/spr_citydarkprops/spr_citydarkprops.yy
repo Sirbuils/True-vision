@@ -21,8 +21,8 @@
   "width": 512,
   "height": 600,
   "textureGroupId": {
-    "name": "bossgroup",
-    "path": "texturegroups/bossgroup",
+    "name": "citygroup",
+    "path": "texturegroups/citygroup",
   },
   "swatchColours": null,
   "gridX": 0,
@@ -68,7 +68,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Fake Peppino",
-    "path": "folders/Sprites/Bosses/Fake Peppino.yy",
+    "name": "Unused",
+    "path": "folders/Sprites/Unused.yy",
   },
 }

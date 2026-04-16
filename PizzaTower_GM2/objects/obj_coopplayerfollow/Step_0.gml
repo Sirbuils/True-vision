@@ -135,11 +135,17 @@ switch (_p1spr)
 	case obj_player1.spr_climbwall:
 		_spr = obj_player2.spr_climbwall;
 		break;
+	case obj_player1.spr_grab:
+		_spr = obj_player2.spr_grab;
+		break;
 	case obj_player1.spr_mach2jump:
 		_spr = obj_player2.spr_mach2jump;
 		break;
 	case obj_player1.spr_Timesup:
 		_spr = obj_player2.spr_Timesup;
+		break;
+	case obj_player1.spr_deathstart:
+		_spr = obj_player2.spr_deathstart;
 		break;
 	case obj_player1.spr_deathend:
 		_spr = obj_player2.spr_deathend;
@@ -158,6 +164,9 @@ switch (_p1spr)
 		break;
 	case obj_player1.spr_gottreasure:
 		_spr = obj_player2.spr_gottreasure;
+		break;
+	case obj_player1.spr_bossintro:
+		_spr = obj_player2.spr_bossintro;
 		break;
 	case obj_player1.spr_hurtidle:
 		_spr = obj_player2.spr_hurtidle;
@@ -192,9 +201,9 @@ switch (_p1spr)
 	case obj_player1.spr_piledriverland:
 		_spr = obj_player2.spr_piledriverland;
 		break;
-	//case obj_player1.spr_charge:
-	//	_spr = obj_player2.spr_charge;
-	//	break;
+	case obj_player1.spr_charge:
+		_spr = obj_player2.spr_charge;
+		break;
 	case obj_player1.spr_mach3jump:
 		_spr = obj_player2.spr_mach3jump;
 		break;

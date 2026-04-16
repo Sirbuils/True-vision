@@ -18,25 +18,25 @@ if (place_meeting(x, y, obj_player) && sprite_index == spr_pizzaboxunopen)
 		instance_create(x, y, obj_taunteffect);
 		instance_create(x, y + 600, obj_itspizzatime);
 		global.panic = true;
-		//switch (room)
-		//{
-		//	case floor2_roomtreasure:
-		//		global.minutes = 2;
-		//		global.seconds = 40;
-		//		break;
-		//	case floor3_roomtreasure:
-		//		global.minutes = 2;
-		//		global.seconds = 30;
-		//		break;
-		//	case floor4_roomtreasure:
-		//		global.minutes = 2;
-		//		global.seconds = 0;
-		//		break;
-		//	case floor5_roomtreasure:
-		//		global.minutes = 2;
-		//		global.seconds = 0;
-		//		break;
-		//}
+		switch (room)
+		{
+			case floor2_roomtreasure:
+				global.minutes = 2;
+				global.seconds = 40;
+				break;
+			case floor3_roomtreasure:
+				global.minutes = 2;
+				global.seconds = 30;
+				break;
+			case floor4_roomtreasure:
+				global.minutes = 2;
+				global.seconds = 0;
+				break;
+			case floor5_roomtreasure:
+				global.minutes = 2;
+				global.seconds = 0;
+				break;
+		}
 		global.wave = 0;
 		global.maxwave = ((global.minutes * 60) + global.seconds) * 60;
 		if (global.panicbg)
@@ -63,7 +63,7 @@ if (place_meeting(x, y, obj_player) && sprite_index == spr_pizzaboxunopen)
 		{
 			if (roomname == "strongcold")
 			{
-				sprite_index = spr_toppinshroom_intro;
+				sprite_index = spr_xmasshroomtoppin_intro;
 			}
 			else
 			{
@@ -101,7 +101,7 @@ if (place_meeting(x, y, obj_player) && sprite_index == spr_pizzaboxunopen)
 		{
 			if (roomname == "strongcold")
 			{
-				sprite_index = spr_toppincheese_intro;
+				sprite_index = spr_xmascheesetoppin_intro;
 			}
 			else
 			{
@@ -140,7 +140,7 @@ if (place_meeting(x, y, obj_player) && sprite_index == spr_pizzaboxunopen)
 		{
 			if (roomname == "strongcold")
 			{
-				sprite_index = spr_toppintomato_intro;
+				sprite_index = spr_xmastomatotoppin_intro;
 			}
 			else
 			{
@@ -179,7 +179,7 @@ if (place_meeting(x, y, obj_player) && sprite_index == spr_pizzaboxunopen)
 		{
 			if (roomname == "strongcold")
 			{
-				sprite_index = spr_toppinsausage_intro;
+				sprite_index = spr_xmassausagetoppin_intro;
 			}
 			else
 			{
@@ -218,7 +218,7 @@ if (place_meeting(x, y, obj_player) && sprite_index == spr_pizzaboxunopen)
 		{
 			if (roomname == "strongcold")
 			{
-				sprite_index = spr_toppinpineapple_intro;
+				sprite_index = spr_xmaspineappletoppin_intro;
 			}
 			else
 			{

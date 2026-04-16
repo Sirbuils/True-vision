@@ -2,7 +2,10 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_mrstickhub",
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_mrstick_idle",
+    "path": "sprites/spr_mrstick_idle/spr_mrstick_idle.yy",
+  },
   "solid": false,
   "visible": true,
   "managed": true,

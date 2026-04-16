@@ -21,8 +21,8 @@
   "width": 100,
   "height": 100,
   "textureGroupId": {
-    "name": "factorygroup",
-    "path": "texturegroups/factorygroup",
+    "name": "baddiegroup",
+    "path": "texturegroups/baddiegroup",
   },
   "swatchColours": null,
   "gridX": 0,
@@ -72,7 +72,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Grabby Hand",
-    "path": "folders/Sprites/Room Structure/Level Structure/Gimmicks/Grabby Hand.yy",
+    "name": "Unused",
+    "path": "folders/Sprites/Unused.yy",
   },
 }

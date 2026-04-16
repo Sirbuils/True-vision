@@ -2,13 +2,13 @@ if (instance_exists(obj_player))
 {
 	if (custom_level == false)
 	{
-		//with (obj_player)
-		//{
-		//	if (place_meeting(x, y, obj_goldendoor))
-		//	{
-		//		game_restart();
-		//	}
-		//}
+		with (obj_player)
+		{
+			if (place_meeting(x, y, obj_goldendoor))
+			{
+				game_restart();
+			}
+		}
 		if (room != obj_player1.targetRoom || roomreset)
 		{
 			var r = room;

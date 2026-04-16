@@ -21,8 +21,8 @@
   "width": 64,
   "height": 64,
   "textureGroupId": {
-    "name": "hubgroup",
-    "path": "texturegroups/hubgroup",
+    "name": "smallgroup",
+    "path": "texturegroups/smallgroup",
   },
   "swatchColours": null,
   "gridX": 0,
@@ -72,7 +72,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Hub",
-    "path": "folders/Sprites/World/Floor 5/Hub.yy",
+    "name": "Don't Make A Sound",
+    "path": "folders/Sprites/World/Floor 5/Don't Make A Sound.yy",
   },
 }

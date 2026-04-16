@@ -686,7 +686,7 @@ function scr_noise_mach2()
 		with (instance_create_unique(736, 416, obj_baddiespawner))
 		{
 			image_xscale = -1;
-			//content = obj_noisebigbomb;
+			content = obj_noisebigbomb;
 		}
 	}
 }

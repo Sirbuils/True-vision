@@ -2,7 +2,10 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_startgate_pizza",
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_gatepizza_1",
+    "path": "sprites/spr_gatepizza_1/spr_gatepizza_1.yy",
+  },
   "solid": false,
   "visible": true,
   "managed": true,

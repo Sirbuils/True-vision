@@ -46,7 +46,7 @@ with (instance_place(x + (image_xscale * spd), y, obj_destructibles))
 		instance_destroy();
 	}
 }
-if (!minigun && place_meeting(x + (image_xscale * spd), y, obj_solid) && !place_meeting(x + (image_xscale * spd), y, obj_shotgunblock) && !place_meeting(x + (image_xscale * spd), y, obj_destructibles))
+if (!minigun && place_meeting(x + (image_xscale * spd), y, obj_solid) && !place_meeting(x + (image_xscale * spd), y, obj_electricwall) && !place_meeting(x + (image_xscale * spd), y, obj_shotgunblock) && !place_meeting(x + (image_xscale * spd), y, obj_destructibles))
 {
 	instance_destroy();
 }

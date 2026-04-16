@@ -31,7 +31,7 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Details",
-    "path": "folders/Objects/Room Structure/Details.yy",
+    "name": "Unused",
+    "path": "folders/Objects/Unused.yy",
   },
 }

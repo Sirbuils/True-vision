@@ -9,7 +9,7 @@ function scr_player_handstandjump()
 	{
 		if (movespeed < 10)
 		{
-			if ((sprite_index == spr_player_pistolshot) && movespeed < 8)
+			if ((sprite_index == spr_player_pistolshot || sprite_index == spr_shotgun_shot) && movespeed < 8)
 			{
 				movespeed += 0.25;
 			}
@@ -27,7 +27,7 @@ function scr_player_handstandjump()
 	{
 		if (movespeed < 10)
 		{
-			if ((sprite_index == spr_player_pistolshot) && movespeed < 8)
+			if ((sprite_index == spr_player_pistolshot || sprite_index == spr_shotgun_shot) && movespeed < 8)
 			{
 				movespeed += 0.25;
 			}

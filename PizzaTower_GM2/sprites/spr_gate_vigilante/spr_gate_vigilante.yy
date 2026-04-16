@@ -70,7 +70,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Hub",
-    "path": "folders/Sprites/World/Floor 2/Hub.yy",
+    "name": "Floor 2",
+    "path": "folders/Sprites/World/Floor 2.yy",
   },
 }

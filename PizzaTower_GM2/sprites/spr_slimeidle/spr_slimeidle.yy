@@ -84,7 +84,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Cheeseslime",
-    "path": "folders/Sprites/Room Structure/Level Structure/Baddies/Cheeseslime.yy",
+    "name": "Escape Followers",
+    "path": "folders/Sprites/Room Structure/Hub Structure/Escape Followers.yy",
   },
 }

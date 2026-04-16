@@ -47,6 +47,9 @@ player_palettes[1] = [
   ["grannykisses", false, 21, spr_noisepattern8],
   ["towerguy", false, 20, spr_noisepattern9]
 ];
+player_palettes[2] = [
+  ["snick", true, 1]
+];
 ini_open_from_string(obj_savesystem.ini_str_options);
 for (var i = 0; i < array_length(player_palettes); i++)
 {

@@ -70,7 +70,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Greaseball",
-    "path": "folders/Sprites/Room Structure/Level Structure/Gimmicks/Greaseball.yy",
+    "name": "Gimmicks",
+    "path": "folders/Sprites/Room Structure/Level Structure/Gimmicks.yy",
   },
 }

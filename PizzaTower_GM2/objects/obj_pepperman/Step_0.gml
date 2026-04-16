@@ -1,4 +1,7 @@
-
+if (room == rm_editor)
+{
+	exit;
+}
 targetplayer = obj_player1.id;
 wastedhits = 10 - elitehit;
 if (elitehit <= 1 && phase == 2 && destroyable)

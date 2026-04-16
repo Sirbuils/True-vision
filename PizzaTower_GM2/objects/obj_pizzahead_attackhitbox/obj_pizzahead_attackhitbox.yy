@@ -27,7 +27,7 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Pizzahead",
-    "path": "folders/Objects/Boss/Pizzahead.yy",
+    "name": "Unreferenced",
+    "path": "folders/Objects/Unused/Unreferenced.yy",
   },
 }

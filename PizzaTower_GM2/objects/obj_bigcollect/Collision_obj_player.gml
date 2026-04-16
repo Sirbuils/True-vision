@@ -1,5 +1,9 @@
 if (other.state != states.gotoplayer)
 {
+	if (obj_player1.character == "V")
+	{
+		global.playerhealth = clamp(global.playerhealth + 10, 0, 100);
+	}
 	global.heattime = 60;
 	with (obj_camera)
 	{

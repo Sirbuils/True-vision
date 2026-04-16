@@ -211,7 +211,7 @@ function scr_player_ghost()
 		}
 		exit;
 	}
-	if (sprite_index != yousuck)
+	if (sprite_index != spr_ghostend)
 	{
 		var maxspeed = 6;
 		var hspaccel = 0.4;
@@ -373,7 +373,7 @@ function scr_player_ghost()
 				{
 					hsp = dx * ghostbump;
 					vsp = dy * ghostbump;
-					//sprite_index = spr_player_ghostbump;
+					sprite_index = spr_player_ghostbump;
 				}
 				else
 				{
@@ -391,26 +391,26 @@ function scr_player_ghost()
 				sprite_index = spr_ghostidle;
 			}
 		}
-		//if (place_meeting(x, y, obj_tombstone) && sprite_index != spr_ghostend)
-		//{
-		//	sprite_index = spr_ghostend;
-		//	image_index = 0;
-		//	image_alpha = 1;
-		//	vsp = 10;
-		//	hsp = 0;
-		//	grav = 0.5;
-		//	movespeed = 0;
-		//	with (instance_place(x, y, obj_tombstone))
-		//	{
-		//		other.x = x;
-		//		other.y = y;
-		//	}
-		//}
+		if (place_meeting(x, y, obj_tombstone) && sprite_index != spr_ghostend)
+		{
+			sprite_index = spr_ghostend;
+			image_index = 0;
+			image_alpha = 1;
+			vsp = 10;
+			hsp = 0;
+			grav = 0.5;
+			movespeed = 0;
+			with (instance_place(x, y, obj_tombstone))
+			{
+				other.x = x;
+				other.y = y;
+			}
+		}
 	}
-	//if (sprite_index == spr_ghostend && ANIMATION_END)
-	//{
-	//	state = states.normal;
-	//}
+	if (sprite_index == spr_ghostend && ANIMATION_END)
+	{
+		state = states.normal;
+	}
 	if (place_meeting(x, y, obj_ghosttransparency))
 	{
 		image_alpha = 0.5;

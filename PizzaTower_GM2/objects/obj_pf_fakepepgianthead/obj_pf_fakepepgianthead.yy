@@ -34,7 +34,7 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Fake Peppino",
-    "path": "folders/Objects/Boss/Fake Peppino.yy",
+    "name": "Unused",
+    "path": "folders/Objects/Unused.yy",
   },
 }

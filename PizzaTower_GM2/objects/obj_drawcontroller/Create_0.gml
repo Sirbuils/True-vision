@@ -41,6 +41,7 @@ objdark_arr =
 	obj_destructibles,
 	obj_collect,
 	obj_bigcollect,
+	obj_giantcollect,
 	obj_secretportal,
 	obj_vigilantecow,
 	obj_cowstampede,
@@ -49,6 +50,6 @@ objdark_arr =
 	obj_hppickup,
 	obj_vigilantecow,
 	obj_stampedecloud,
-	//obj_ladderhorizontal,
+	obj_ladderhorizontal,
 	obj_vigilanteshot
 ];

@@ -21,8 +21,8 @@
   "width": 100,
   "height": 100,
   "textureGroupId": {
-    "name": "smallgroup",
-    "path": "texturegroups/smallgroup",
+    "name": "noisegroup",
+    "path": "texturegroups/noisegroup",
   },
   "swatchColours": null,
   "gridX": 0,

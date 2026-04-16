@@ -1,4 +1,7 @@
-
+if (room == rm_editor)
+{
+	exit;
+}
 var palinfo = get_pep_palette_info();
 spr_palette = palinfo.spr_palette;
 paletteselect = palinfo.paletteselect;

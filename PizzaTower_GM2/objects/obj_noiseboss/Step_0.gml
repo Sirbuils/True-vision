@@ -1,4 +1,7 @@
-
+if (room == rm_editor)
+{
+	exit;
+}
 targetplayer = obj_player1.id;
 wastedhits = 8 - elitehit;
 if (elitehit <= 1 && pizzahead)

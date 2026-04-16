@@ -78,7 +78,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Shotgun",
-    "path": "folders/Sprites/Room Structure/Level Structure/Gimmicks/Shotgun.yy",
+    "name": "Unused",
+    "path": "folders/Sprites/Unused.yy",
   },
 }

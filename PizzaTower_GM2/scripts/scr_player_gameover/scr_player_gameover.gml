@@ -5,6 +5,11 @@ function scr_player_gameover()
 	scale_xs = 1;
 	scale_ys = 1;
 	visible = true;
+	if (sprite_index == spr_deathstart)
+	{
+		vsp = 0;
+		hsp = 0;
+	}
 	flash = false;
 	alarm[0] = -1;
 	alarm[1] = -1;
@@ -15,12 +20,12 @@ function scr_player_gameover()
 	alarm[7] = -1;
 	alarm[8] = -1;
 	alarm[9] = -1;
-	//if (ANIMATION_END && sprite_index == spr_deathstart)
-	//{
-	//	alarm[10] = 5;
-	//	vsp = -10;
-	//	sprite_index = spr_deathend;
-	//}
+	if (ANIMATION_END && sprite_index == spr_deathstart)
+	{
+		alarm[10] = 5;
+		vsp = -10;
+		sprite_index = spr_deathend;
+	}
 	hurted = false;
 	inv_frames = false;
 	if (place_meeting(x + floor(hsp), y, obj_null))

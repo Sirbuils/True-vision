@@ -16,8 +16,6 @@ else if (state == 2)
 	sprite_index = spr_tvstatic;
 	image_index = sprite_get_number(spr_tvstatic) - 1;
 	image_speed = 0;
-	//x = 0
-	//y = 0
 	with (obj_player1)
 	{
 		state = states.animatronic;

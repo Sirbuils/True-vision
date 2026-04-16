@@ -32,7 +32,7 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Noise",
-    "path": "folders/Objects/Boss/Noise.yy",
+    "name": "Unused",
+    "path": "folders/Objects/Unused.yy",
   },
 }

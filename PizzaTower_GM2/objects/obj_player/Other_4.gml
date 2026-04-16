@@ -82,6 +82,18 @@ if (state == states.comingoutdoor && global.coop == true && !place_meeting(x, y,
 		visible = false;
 	}
 }
+if (global.coop == true)
+{
+	scr_changetoppings();
+	if (!instance_exists(obj_cooppointer))
+	{
+		instance_create(x, y, obj_cooppointer);
+	}
+	if (!instance_exists(obj_coopflag))
+	{
+		instance_create(x, y, obj_coopflag);
+	}
+}
 if (state == states.grab)
 {
 	state = states.normal;
@@ -259,6 +271,14 @@ if (verticalhallway)
 	y += (vhallwaydirection * 20);
 	y = floor(y);
 	verticalstate = states.normal;
+}
+if (character == "M" && place_meeting(x, y, obj_boxofpizza))
+{
+	while (place_meeting(x, y, obj_boxofpizza))
+	{
+		var _inst = instance_place(x, y, obj_boxofpizza);
+		y -= _inst.image_yscale;
+	}
 }
 if (state == states.taxi)
 {

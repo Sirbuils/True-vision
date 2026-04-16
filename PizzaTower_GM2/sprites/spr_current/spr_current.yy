@@ -21,8 +21,8 @@
   "width": 32,
   "height": 32,
   "textureGroupId": {
-    "name": "levelstructuregroup",
-    "path": "texturegroups/levelstructuregroup",
+    "name": "beachgroup",
+    "path": "texturegroups/beachgroup",
   },
   "swatchColours": null,
   "gridX": 0,

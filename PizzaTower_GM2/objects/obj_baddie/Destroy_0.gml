@@ -1,4 +1,7 @@
-
+if (room == rm_editor)
+{
+	exit;
+}
 if (ds_list_find_index(global.baddieroom, id) == -1 && (!elite || elitehit <= 0) && destroyable)
 {
 	if (object_index != obj_peppinoclone && object_index != obj_ghoul && object_index != obj_bazookabaddie && object_index != obj_snowman)
@@ -119,6 +122,10 @@ if (ds_list_find_index(global.baddieroom, id) == -1 && important == false)
 			global.combo += 1;
 			global.enemykilled += 1;
 			global.combotime = 60;
+		}
+		if (instance_exists(obj_hardmode))
+		{
+			global.heatmeter_count++;
 		}
 		if (!elite || elitehit <= 0)
 		{

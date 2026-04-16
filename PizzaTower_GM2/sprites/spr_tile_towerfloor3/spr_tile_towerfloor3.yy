@@ -21,8 +21,8 @@
   "width": 640,
   "height": 1504,
   "textureGroupId": {
-    "name": "hubgroup",
-    "path": "texturegroups/hubgroup",
+    "name": "entrancegroup",
+    "path": "texturegroups/entrancegroup",
   },
   "swatchColours": null,
   "gridX": 0,
@@ -68,7 +68,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Hub",
-    "path": "folders/Sprites/World/Floor 3/Hub.yy",
+    "name": "Floor 3",
+    "path": "folders/Sprites/World/Floor 3.yy",
   },
 }

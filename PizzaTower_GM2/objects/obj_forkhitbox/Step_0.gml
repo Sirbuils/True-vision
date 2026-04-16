@@ -67,6 +67,9 @@ with (ID)
 				instance_destroy(other);
 			}
 			break;
+		case obj_motodude:
+			other.x = x + (image_xscale * 32);
+			break;
 		case obj_robot:
 			if (state != states.mach2 && state != states.slap && state != states.tackle)
 			{
@@ -101,10 +104,19 @@ with (ID)
 			}
 			break;
 		case obj_thug_red:
+		case obj_thug_blue:
+		case obj_thug_green:
 			if (state != states.punch)
 			{
 				instance_destroy(other);
 				punchinst = noone;
+			}
+			break;
+		case obj_weeniesquire:
+			if (state != states.punch)
+			{
+				hitboxcreate = false;
+				instance_destroy(other);
 			}
 			break;
 		case obj_minijohn:
@@ -131,6 +143,13 @@ with (ID)
 			if (!hitwall)
 			{
 				instance_destroy(other);
+			}
+			break;
+		case obj_snickexe:
+			if (obj_player1.instakillmove || obj_player1.state == states.handstandjump)
+			{
+				instance_destroy(other);
+				hitboxcreate = false;
 			}
 			break;
 		case obj_pickle:

@@ -23,6 +23,10 @@ function scr_do_rank(_showtoppins = true, _isboss = false)
 	var cy = camera_get_view_y(view_camera[0]) + obj_screensizer.normal_size_fix_y;
 	rankpos_x = ex - cx;
 	rankpos_y = ey - cy;
+	if (global.timeattack == true)
+	{
+		obj_timeattack.stop = true;
+	}
 	with (obj_wartimer)
 	{
 		notification_push(notifications.wartimer_finished, [minutes, seconds + addseconds]);

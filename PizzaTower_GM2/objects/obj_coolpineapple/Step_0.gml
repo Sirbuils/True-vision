@@ -1,4 +1,7 @@
-
+if (room == rm_editor)
+{
+	exit;
+}
 switch (state)
 {
 	case states.idle:
@@ -160,53 +163,53 @@ switch (state)
 		}
 		break;
 	case states.punch:
-		//if (sprite_index == spr_coolpinea_ragestart)
-		//{
-		//	hsp = 0;
-		//	inv_timer = 0;
-		//	if (ANIMATION_END)
-		//	{
-		//		sprite_index = spr_coolpinea_rage;
-		//		breakdance_movespeed = 10;
-		//		hsp = breakdance_movespeed * image_xscale;
-		//	}
-		//}
-		//else
-		//{
-		//	breakdance_movespeed = Approach(breakdance_movespeed, 0, 0.25);
-		//	hsp = image_xscale * breakdance_movespeed;
-		//	if (place_meeting(x + sign(hsp), y, obj_solid))
-		//	{
-		//		image_xscale *= -1;
-		//		if (breakdance_movespeed < 3)
-		//		{
-		//			breakdance_movespeed = 5;
-		//		}
-		//		hsp = breakdance_movespeed * image_xscale;
-		//	}
-		//	if (trail_count > 0)
-		//	{
-		//		trail_count--;
-		//	}
-		//	else
-		//	{
-		//		with (create_red_afterimage(x, y, sprite_index, image_index - 1, image_xscale))
-		//		{
-		//			playerid = other.id;
-		//		}
-		//		trail_count = trail_max;
-		//	}
-		//	if (breakdance > 0)
-		//	{
-		//		breakdance--;
-		//	}
-		//	else
-		//	{
-		//		sprite_index = walkspr;
-		//		state = states.walk;
-		//		breakdanceinst = noone;
-		//	}
-		//}
+		if (sprite_index == spr_coolpinea_ragestart)
+		{
+			hsp = 0;
+			inv_timer = 0;
+			if (ANIMATION_END)
+			{
+				sprite_index = spr_coolpinea_rage;
+				breakdance_movespeed = 10;
+				hsp = breakdance_movespeed * image_xscale;
+			}
+		}
+		else
+		{
+			breakdance_movespeed = Approach(breakdance_movespeed, 0, 0.25);
+			hsp = image_xscale * breakdance_movespeed;
+			if (place_meeting(x + sign(hsp), y, obj_solid))
+			{
+				image_xscale *= -1;
+				if (breakdance_movespeed < 3)
+				{
+					breakdance_movespeed = 5;
+				}
+				hsp = breakdance_movespeed * image_xscale;
+			}
+			if (trail_count > 0)
+			{
+				trail_count--;
+			}
+			else
+			{
+				with (create_red_afterimage(x, y, sprite_index, image_index - 1, image_xscale))
+				{
+					playerid = other.id;
+				}
+				trail_count = trail_max;
+			}
+			if (breakdance > 0)
+			{
+				breakdance--;
+			}
+			else
+			{
+				sprite_index = walkspr;
+				state = states.walk;
+				breakdanceinst = noone;
+			}
+		}
 		break;
 }
 if (flash == true && alarm[2] <= 0)

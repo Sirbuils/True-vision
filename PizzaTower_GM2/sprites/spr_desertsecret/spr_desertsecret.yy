@@ -93,7 +93,7 @@
     "resourceType": "GMNineSliceData",
   },
   "parent": {
-    "name": "Oregano Desert",
-    "path": "folders/Sprites/World/Floor 2/Oregano Desert.yy",
+    "name": "Unused",
+    "path": "folders/Sprites/Unused.yy",
   },
 }

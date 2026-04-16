@@ -139,7 +139,7 @@ if (state == states.chase && ragecooldown <= 0)
 		}
 		if (elite)
 		{
-			//sprite_index = spr_minijohn_rage1;
+			sprite_index = spr_minijohn_rage1;
 			image_index = 0;
 			vsp = -8;
 			flash = true;

@@ -553,7 +553,7 @@
     "TileSerialiseData": [],
   },
   "parent": {
-    "name": "Gnome Forest",
-    "path": "folders/Tile Sets/Floor 3/Gnome Forest.yy",
+    "name": "Unused",
+    "path": "folders/Tile Sets/Unused.yy",
   },
 }

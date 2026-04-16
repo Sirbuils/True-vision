@@ -32,7 +32,7 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Baddies",
-    "path": "folders/Objects/Baddies.yy",
+    "name": "Unreferenced",
+    "path": "folders/Objects/Unused/Unreferenced.yy",
   },
 }

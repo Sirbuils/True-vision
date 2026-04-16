@@ -1,4 +1,7 @@
-
+if (room == rm_editor)
+{
+	exit;
+}
 if (image_alpha == 1)
 {
 	if (object_index != obj_escapecollect)
@@ -8,6 +11,10 @@ if (image_alpha == 1)
 	else
 	{
 		scr_sound_multiple("event:/sfx/misc/bellcollect", x, y);
+	}
+	if (obj_player1.character == "V")
+	{
+		global.playerhealth = clamp(global.playerhealth + 1, 0, 100);
 	}
 	global.heattime += 10;
 	global.heattime = clamp(global.heattime, 0, 60);

@@ -21,8 +21,8 @@
   "width": 208,
   "height": 385,
   "textureGroupId": {
-    "name": "entrancegroup",
-    "path": "texturegroups/entrancegroup",
+    "name": "hubgroup",
+    "path": "texturegroups/hubgroup",
   },
   "swatchColours": null,
   "gridX": 0,

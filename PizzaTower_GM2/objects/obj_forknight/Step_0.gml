@@ -1,4 +1,7 @@
-
+if (room == rm_editor)
+{
+	exit;
+}
 switch (state)
 {
 	case states.idle:
@@ -66,7 +69,7 @@ if (elite && ragecooldown == 0)
 		if (check && (y <= (player.y + 60) && y >= (player.y - 60)))
 		{
 			image_xscale = -sign(x - player.x);
-			//sprite_index = spr_forknight_ragestart;
+			sprite_index = spr_forknight_ragestart;
 			image_index = 0;
 			flash = true;
 			alarm[4] = 5;

@@ -1,4 +1,7 @@
-
+if (room == rm_editor)
+{
+	exit;
+}
 if (point_in_camera(x, y, view_camera[0]) && activated == false)
 {
 	activated = true;

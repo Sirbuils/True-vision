@@ -90,7 +90,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Mr. Stick",
-    "path": "folders/Sprites/Room Structure/Hub Structure/Mr. Stick.yy",
+    "name": "Fonts",
+    "path": "folders/Sprites/HUD/Fonts.yy",
   },
 }

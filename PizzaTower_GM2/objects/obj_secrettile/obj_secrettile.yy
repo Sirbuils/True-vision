@@ -33,7 +33,7 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Collision",
-    "path": "folders/Objects/Room Structure/Collision.yy",
+    "name": "Room Structure",
+    "path": "folders/Objects/Room Structure.yy",
   },
 }

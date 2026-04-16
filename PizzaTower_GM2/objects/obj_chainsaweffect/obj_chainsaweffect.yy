@@ -2,7 +2,10 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_chainsaweffect",
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_chainsaweffect",
+    "path": "sprites/spr_chainsaweffect/spr_chainsaweffect.yy",
+  },
   "solid": false,
   "visible": true,
   "managed": true,

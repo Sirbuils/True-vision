@@ -1,7 +1,7 @@
 function state_player_normal()
 {
-	var maxmovespeed = 8;
-	var maxmovespeed2 = 6;
+	var maxmovespeed = char == "S" ? 10 : 8;
+	var maxmovespeed2 = char == "S" ? 8 : 6;
 	var accel = 0.5;
 	var deccel = 0.1;
 	var jumpspeed = -11;
@@ -418,7 +418,7 @@ function state_player_normal()
 			}
 			freefallstart = 0;
 		}
-		if (key_down || (grounded && vsp > 0 && scr_solid(x, y - 3) && scr_solid(x, y)) || place_meeting(x, y, obj_solid))
+		if (key_down || (grounded && vsp > 0 && scr_solid(x, y - 3) && scr_solid(x, y)) || place_meeting(x, y, obj_solid)) && char != "S"
 		{
 			state = states.crouch;
 			landAnim = false;
@@ -463,7 +463,7 @@ function state_player_normal()
 			scr_pistolshoot(states.normal);
 		}
 	}
-	if (input_buffer_slap > 0 && !key_up && shotgunAnim == false && !global.pistol)
+	if (input_buffer_slap > 0 && !key_up && shotgunAnim == false && !global.pistol && char != "S")
 	{
 		input_buffer_slap = 0;
 		sprite_index = spr_suplexdash;
@@ -483,13 +483,11 @@ function state_player_normal()
 		sprite_index = spr_breakdanceuppercut;
 		fmod_event_instance_play(snd_uppercut);
 		if (ispeppino)
-		{
 			vsp = -14;
-		}
-		else
-		{
+		if (!ispeppino)
 			vsp = -20;
-		}
+		if (char = "S")
+			vsp = -16;
 		movespeed = hsp;
 		if (key_attack)
 		{
@@ -509,6 +507,8 @@ function state_player_normal()
 			}
 		}
 	}
+	scr_snick_crashdash();
+	
 	switch (character)
 	{
 		case "P":
@@ -516,16 +516,24 @@ function state_player_normal()
 			{
 				if (!global.pistol || pistolanim == noone)
 				{
-					sprite_index = spr_mach1;
+					
 					image_index = 0;
 					state = states.mach2;
-					if (movespeed < 6 && movespeed >= 0)
+					var movestartspeed = 6
+					if char == "S"
 					{
-						movespeed = 6;
+						movestartspeed = 8;
+						sprite_index = spr_mach;
 					}
-					if (movespeed > -6 && movespeed < 0)
+					else
+						sprite_index = spr_mach1;
+					if (movespeed < movestartspeed && movespeed >= 0)
 					{
-						movespeed = 6;
+						movespeed = movestartspeed;
+					}
+					if (movespeed > -movestartspeed && movespeed < 0)
+					{
+						movespeed = movestartspeed;
 					}
 				}
 			}

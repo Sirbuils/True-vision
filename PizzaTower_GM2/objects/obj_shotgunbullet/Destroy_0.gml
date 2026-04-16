@@ -22,7 +22,7 @@ if (sprite_index == spr_mortprojectile)
 		image_xscale = other.image_xscale;
 	}
 }
-if (sprite_index != yousuck)
+if (sprite_index != sprite10391)
 {
 	repeat (6)
 	{

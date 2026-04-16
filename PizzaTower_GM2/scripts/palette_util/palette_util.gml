@@ -55,3 +55,32 @@ function get_noise_palette_info()
 		patterntexture: noone
 	};
 }
+
+function get_snick_palette_info()
+{
+	if (global.swapmode)
+	{
+		var pal = 0;
+		return 
+		{
+			spr_palette: spr_snickpalette,
+			paletteselect: obj_player1.player_paletteselect[pal],
+			patterntexture: obj_player1.player_patterntexture[pal]
+		};
+	}
+	else if (obj_player1.char == "S")
+	{
+		return 
+		{
+			spr_palette: obj_player1.spr_palette,
+			paletteselect: obj_player1.paletteselect,
+			patterntexture: global.palettetexture
+		};
+	}
+	return 
+	{
+		spr_palette: spr_snickpalette,
+		paletteselect: 1,
+		patterntexture: noone
+	};
+}

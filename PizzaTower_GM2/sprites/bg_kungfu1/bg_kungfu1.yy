@@ -21,8 +21,8 @@
   "width": 1100,
   "height": 540,
   "textureGroupId": {
-    "name": "citygroup",
-    "path": "texturegroups/citygroup",
+    "name": "kungfugroup",
+    "path": "texturegroups/kungfugroup",
   },
   "swatchColours": null,
   "gridX": 0,

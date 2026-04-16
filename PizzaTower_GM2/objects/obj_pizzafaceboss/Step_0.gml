@@ -73,6 +73,7 @@ if (prevhp != elitehit)
 			instance_destroy(obj_forkhitbox);
 			instance_destroy(obj_spitcheesespike);
 			instance_destroy(obj_banditochicken_dynamite);
+			instance_destroy(obj_banditochicken_projectile);
 			state = states.transitioncutscene;
 			substate = states.animation;
 			introbuffer = 100;

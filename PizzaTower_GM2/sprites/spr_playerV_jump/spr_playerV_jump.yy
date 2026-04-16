@@ -21,8 +21,8 @@
   "width": 100,
   "height": 100,
   "textureGroupId": {
-    "name": "bossgroup",
-    "path": "texturegroups/bossgroup",
+    "name": "vigilantegroup",
+    "path": "texturegroups/vigilantegroup",
   },
   "swatchColours": null,
   "gridX": 0,
@@ -90,7 +90,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Vigilante",
-    "path": "folders/Sprites/Bosses/Vigilante.yy",
+    "name": "Unused",
+    "path": "folders/Sprites/Unused.yy",
   },
 }

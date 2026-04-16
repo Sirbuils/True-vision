@@ -109,6 +109,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Peppibot",
-    "path": "folders/Sprites/Room Structure/Level Structure/Baddies/Peppibot.yy",
+    "path": "folders/Sprites/Baddies/Peppibot.yy",
   },
 }

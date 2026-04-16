@@ -1,4 +1,7 @@
-
+if (room == rm_editor)
+{
+	exit;
+}
 if (obj_player.state != states.hurt && global.pineapplefollow == false)
 {
 	global.heattime = 60;

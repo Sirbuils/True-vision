@@ -47,7 +47,7 @@ function scr_player_machroll()
 			}
 			if (grounded && sprite_index != spr_playerV_divekickstart)
 			{
-				sprite_index = !skateboarding ? spr_machroll : spr_machroll;
+				sprite_index = !skateboarding ? spr_machroll : spr_clowncrouch;
 			}
 			else if (sprite_index != spr_dive && !skateboarding)
 			{

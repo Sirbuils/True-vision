@@ -1,4 +1,7 @@
-
+if (room == rm_editor)
+{
+	exit;
+}
 var targetplayer = instance_nearest(x, y, obj_player);
 switch (state)
 {

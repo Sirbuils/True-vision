@@ -65,7 +65,7 @@ function scr_player_firemouth()
 	alarm[5] = 2;
 	if (sprite_index == spr_firemouthintro && ANIMATION_END)
 	{
-		//scr_losepoints();
+		scr_losepoints();
 		sprite_index = spr_firemouth;
 		dir = xscale;
 	}

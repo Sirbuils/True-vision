@@ -65,10 +65,10 @@ function vigilante_cancel_attack()
 				image_index = 0;
 				movespeed = 4;
 				millionpunch_buffer = millionpunch_max;
-				//with (instance_create(x, y, obj_millionpunchhitbox))
-				//{
-				//	baddieID = other.id;
-				//}
+				with (instance_create(x, y, obj_millionpunchhitbox))
+				{
+					baddieID = other.id;
+				}
 				break;
 			case states.dynamite:
 				dynamite_shot = true;
@@ -260,10 +260,10 @@ function vigilante_decide_attack_phase4()
 			image_index = 0;
 			movespeed = 4;
 			millionpunch_buffer = millionpunch_max;
-			//with (instance_create(x, y, obj_millionpunchhitbox))
-			//{
-			//	baddieID = other.id;
-			//}
+			with (instance_create(x, y, obj_millionpunchhitbox))
+			{
+				baddieID = other.id;
+			}
 		}
 	}
 }

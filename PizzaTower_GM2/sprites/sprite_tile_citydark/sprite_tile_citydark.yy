@@ -21,8 +21,8 @@
   "width": 256,
   "height": 192,
   "textureGroupId": {
-    "name": "backgroundgroup",
-    "path": "texturegroups/backgroundgroup",
+    "name": "Default",
+    "path": "texturegroups/Default",
   },
   "swatchColours": null,
   "gridX": 0,
@@ -68,7 +68,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Level Structure",
-    "path": "folders/Sprites/Room Structure/Level Structure.yy",
+    "name": "Unused",
+    "path": "folders/Sprites/Unused.yy",
   },
 }

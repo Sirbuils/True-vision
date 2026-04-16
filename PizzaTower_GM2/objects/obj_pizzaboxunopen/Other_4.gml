@@ -1,3 +1,7 @@
+if (global.timeattack == true)
+{
+	instance_destroy();
+}
 if (ds_list_find_index(global.saveroom, id) != -1)
 {
 	instance_destroy();
@@ -19,6 +23,10 @@ if (content == obj_pizzakinsausage && global.sausagefollow)
 	instance_destroy();
 }
 if (content == obj_pizzakinpineapple && global.pineapplefollow)
+{
+	instance_destroy();
+}
+if (global.snickchallenge == true)
 {
 	instance_destroy();
 }

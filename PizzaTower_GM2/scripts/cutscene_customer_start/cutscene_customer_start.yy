@@ -5,7 +5,7 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Visuals",
-    "path": "folders/Scripts/Visuals.yy",
+    "name": "Unused",
+    "path": "folders/Scripts/Unused.yy",
   },
 }

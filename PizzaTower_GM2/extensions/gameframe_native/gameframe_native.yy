@@ -17,7 +17,6 @@
   "iosProps": true,
   "tvosProps": false,
   "androidProps": true,
-  "html5Props": false,
   "installdir": "",
   "files": [
     {"resourceType":"GMExtensionFile","resourceVersion":"1.0","name":"","filename":"gameframe.dll","origname":"extensions\\gameframe.dll","init":"","final":"","kind":1,"uncompress":false,"functions":[
@@ -96,7 +95,6 @@
         {"name":"gameframe_is_natively_minimized","path":"extensions/gameframe_native/gameframe_native.yy",},
       ],},
   ],
-  "HTML5CodeInjection": "",
   "classname": "",
   "tvosclassname": "",
   "tvosdelegatename": "",

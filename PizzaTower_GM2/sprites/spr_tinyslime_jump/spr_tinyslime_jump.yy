@@ -72,7 +72,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Deep-Dish 9",
-    "path": "folders/Sprites/World/Floor 3/Deep-Dish 9.yy",
+    "name": "Oh Shit!",
+    "path": "folders/Sprites/World/Floor 4/Oh Shit!.yy",
   },
 }

@@ -31,7 +31,7 @@ dark_arr = [
   obj_noisecrushertrail,
   obj_skateboardnoise,
   obj_cowstampede,
- // obj_ladderhorizontal,
+  obj_ladderhorizontal,
   obj_sausageman_dead,
   obj_pizzahead_finalecutscene,
   obj_particlesystem,

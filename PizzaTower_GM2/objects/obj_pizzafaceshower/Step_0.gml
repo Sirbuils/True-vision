@@ -98,9 +98,6 @@ switch (state)
 					obj_savesystem.ini_str = ini_close();
 					instance_destroy();
 				}
-				ini_open_from_string(obj_savesystem.ini_str);
-				ini_write_real("Game", "shower", true);
-				obj_savesystem.ini_str = ini_close();
 				break;
 		}
 		break;

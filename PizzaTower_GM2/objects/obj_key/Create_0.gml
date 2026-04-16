@@ -1,4 +1,7 @@
-
+if (room == rm_editor)
+{
+	exit;
+}
 if (global.key_inv == true)
 {
 	vsp = -15;

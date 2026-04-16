@@ -31,7 +31,7 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Game Structure",
-    "path": "folders/Objects/Game Structure.yy",
+    "name": "Unused",
+    "path": "folders/Objects/Unused.yy",
   },
 }

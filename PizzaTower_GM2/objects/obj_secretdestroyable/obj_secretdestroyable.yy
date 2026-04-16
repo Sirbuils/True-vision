@@ -2,7 +2,10 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_secretdestroyable",
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_secretblock",
+    "path": "sprites/spr_secretblock/spr_secretblock.yy",
+  },
   "solid": false,
   "visible": true,
   "managed": true,

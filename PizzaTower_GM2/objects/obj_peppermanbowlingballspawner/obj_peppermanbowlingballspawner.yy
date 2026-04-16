@@ -31,7 +31,7 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Pepperman",
-    "path": "folders/Objects/Boss/Pepperman.yy",
+    "name": "Unused",
+    "path": "folders/Objects/Unused.yy",
   },
 }

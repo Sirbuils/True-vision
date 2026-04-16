@@ -1,4 +1,7 @@
-
+if (room == rm_editor)
+{
+	exit;
+}
 switch (state)
 {
 	case states.walk:

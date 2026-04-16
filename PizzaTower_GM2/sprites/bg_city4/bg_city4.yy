@@ -21,8 +21,8 @@
   "width": 807,
   "height": 606,
   "textureGroupId": {
-    "name": "bossgroup",
-    "path": "texturegroups/bossgroup",
+    "name": "citygroup",
+    "path": "texturegroups/citygroup",
   },
   "swatchColours": null,
   "gridX": 0,

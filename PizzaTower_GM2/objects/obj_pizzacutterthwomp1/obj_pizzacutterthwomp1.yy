@@ -2,7 +2,10 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_pizzacutterthwomp1",
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_pizzacutterthwomp",
+    "path": "sprites/spr_pizzacutterthwomp/spr_pizzacutterthwomp.yy",
+  },
   "solid": false,
   "visible": true,
   "managed": true,

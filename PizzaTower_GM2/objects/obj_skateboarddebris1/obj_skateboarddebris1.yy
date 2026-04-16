@@ -33,7 +33,7 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Noise",
-    "path": "folders/Objects/Boss/Noise.yy",
+    "name": "Effects",
+    "path": "folders/Objects/Effects.yy",
   },
 }

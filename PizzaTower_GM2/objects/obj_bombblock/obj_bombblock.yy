@@ -2,7 +2,10 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_bombblock",
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_bombblock",
+    "path": "sprites/spr_bombblock/spr_bombblock.yy",
+  },
   "solid": false,
   "visible": true,
   "managed": true,
@@ -34,7 +37,7 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Gimmicks",
-    "path": "folders/Objects/Room Structure/Level Structure/Gimmicks.yy",
+    "name": "Unused",
+    "path": "folders/Objects/Unused.yy",
   },
 }

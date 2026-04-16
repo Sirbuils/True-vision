@@ -29,7 +29,7 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Options",
-    "path": "folders/Objects/Menues/Options.yy",
+    "name": "Game Structure",
+    "path": "folders/Objects/Game Structure.yy",
   },
 }

@@ -28,7 +28,7 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Cutscenes",
-    "path": "folders/Objects/Cutscenes.yy",
+    "name": "Unused",
+    "path": "folders/Objects/Unused.yy",
   },
 }

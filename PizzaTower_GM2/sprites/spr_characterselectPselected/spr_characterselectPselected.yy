@@ -72,7 +72,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Character Select",
-    "path": "folders/Sprites/Menues/Character Select.yy",
+    "name": "Unused",
+    "path": "folders/Sprites/Unused.yy",
   },
 }

@@ -93,7 +93,7 @@ function SUPER_boss_destroy(_boss)
 		camera_zoom(1, 0.1);
 		if (state == states.fistmatch || state == states.superattack || state == states.parry || state == states.backbreaker)
 		{
-			//sprite_index = spr_player_attackdash;
+			sprite_index = spr_player_attackdash;
 			image_index = 6;
 			state = states.handstandjump;
 		}

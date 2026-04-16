@@ -1,4 +1,7 @@
-
+if (room == rm_editor)
+{
+	exit;
+}
 if (!instance_exists(cloneid))
 {
 	cloneid = noone;

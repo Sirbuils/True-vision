@@ -21,8 +21,8 @@
   "width": 115,
   "height": 100,
   "textureGroupId": {
-    "name": "hubgroup",
-    "path": "texturegroups/hubgroup",
+    "name": "baddiegroup",
+    "path": "texturegroups/baddiegroup",
   },
   "swatchColours": null,
   "gridX": 0,
@@ -68,7 +68,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Hub",
-    "path": "folders/Sprites/World/Floor 4/Hub.yy",
+    "name": "Floor 4",
+    "path": "folders/Sprites/World/Floor 4.yy",
   },
 }

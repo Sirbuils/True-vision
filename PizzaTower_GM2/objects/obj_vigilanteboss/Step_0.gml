@@ -1,4 +1,7 @@
-
+if (room == rm_editor)
+{
+	exit;
+}
 targetplayer = obj_player1.id;
 wastedhits = 9 - elitehit;
 if (pizzahead && elitehit <= 1)
@@ -234,7 +237,7 @@ if (((phase == 1 && elitehit <= 0) || (phase == 2 && elitehit <= 0)) && !pizzahe
 			instance_destroy(obj_uziprojectile);
 			instance_destroy(obj_vigilantedynamite);
 			instance_destroy(obj_vigilanteshot);
-			//instance_destroy(obj_ladderhorizontal);
+			instance_destroy(obj_ladderhorizontal);
 			with (obj_player1)
 			{
 				pistolanim = noone;

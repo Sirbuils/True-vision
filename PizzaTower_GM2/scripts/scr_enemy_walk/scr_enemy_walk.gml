@@ -1,6 +1,6 @@
 function scr_enemy_walk()
 {
-	if (object_index != obj_robot && object_index != obj_pizzice && object_index != obj_spitcheese && object_index != obj_ninja && object_index != obj_camerapatrol && object_index != obj_trash && object_index != obj_fencer && object_index != obj_rancher && object_index != obj_banditochicken && object_index != obj_ancho && object_index != obj_pickle && object_index != obj_thug_red)
+	if (object_index != obj_robot && object_index != obj_pizzice && object_index != obj_spitcheese && object_index != obj_ninja && object_index != obj_camerapatrol && object_index != obj_trash && object_index != obj_fencer && object_index != obj_rancher && object_index != obj_banditochicken && object_index != obj_ancho && object_index != obj_pickle && object_index != obj_thug_red && object_index != obj_thug_green && object_index != obj_thug_blue)
 	{
 		hsp = (image_xscale * movespeed) + railmovespeed;
 	}
@@ -28,7 +28,7 @@ function scr_enemy_walk()
 			}
 		}
 	}
-	else if (object_index != obj_ninja && object_index != obj_banditochicken && object_index != obj_thug_red)
+	else if (object_index != obj_ninja && object_index != obj_banditochicken && object_index != obj_thug_red && object_index != obj_thug_blue)
 	{
 		hsp = 0;
 	}

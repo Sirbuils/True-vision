@@ -59,14 +59,28 @@ if (DEBUG)
 			elitehit = real(_int);
 		}
 	});
-	SWITCH_CHAR = new DebugCommand("switch_char", "Switches character", "", function()
+	SWITCH_CHAR = new DebugCommand("switch_char", "Switches character", "switch_char P", function(_char)
 	{
-		with (obj_player)
+		// peppino 
+		
+		if _char == "P"
+			obj_player.char = "P";
+		
+		// noise
+		
+		if _char == "N"
 		{
-			character = "P";
-			ispeppino = !ispeppino;
-			scr_characterspr();
+			obj_player.ispeppino = false;
+			obj_player.char = "P";
 		}
+		else
+			obj_player.ispeppino = true;
+			
+		if _char == "S"
+			obj_player.char = "S";
+			
+		with obj_player
+			scr_characterspr();
 	});
 	FILL_GATESWITCH = new DebugCommand("gateswitchmax", "", "", function()
 	{
@@ -156,7 +170,7 @@ if (DEBUG)
 	{
 		with (obj_player)
 		{
-			targetRoom = rm_blank;
+			targetRoom = editor_room;
 			targetDoor = "A";
 		}
 		instance_create_unique(0, 0, obj_fadeout);

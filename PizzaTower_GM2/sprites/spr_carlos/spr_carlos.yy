@@ -21,8 +21,8 @@
   "width": 118,
   "height": 101,
   "textureGroupId": {
-    "name": "spacegroup",
-    "path": "texturegroups/spacegroup",
+    "name": "hubgroup",
+    "path": "texturegroups/hubgroup",
   },
   "swatchColours": null,
   "gridX": 0,

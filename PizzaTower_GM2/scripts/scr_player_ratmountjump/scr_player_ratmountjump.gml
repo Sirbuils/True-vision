@@ -107,6 +107,9 @@ function scr_player_ratmountjump()
 			case spr_player_ratmountjump:
 				sprite_index = spr_player_ratmountfall;
 				break;
+			case spr_player_ratmountjump2:
+				sprite_index = spr_player_ratmountfall2;
+				break;
 			case spr_player_ratmountballoonend2:
 				sprite_index = spr_player_ratmountballoonend3;
 				break;

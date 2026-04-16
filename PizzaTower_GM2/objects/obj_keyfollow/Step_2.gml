@@ -8,7 +8,11 @@ if (xoffset != old_x)
 {
 	depth = (sign(old_x - xoffset) == 1) ? -5 : -12;
 }
-if !global.key_inv
+if (sprite_index != spr_goblinkey && !global.key_inv)
+{
+	instance_destroy();
+}
+if (sprite_index == spr_goblinkey && !global.goblinkey)
 {
 	instance_destroy();
 }
