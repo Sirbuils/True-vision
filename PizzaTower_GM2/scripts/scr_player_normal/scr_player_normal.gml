@@ -516,24 +516,33 @@ function state_player_normal()
 			{
 				if (!global.pistol || pistolanim == noone)
 				{
-					
-					image_index = 0;
-					state = states.mach2;
-					var movestartspeed = 6
-					if char == "S"
+					if char != "M"
 					{
-						movestartspeed = 8;
-						sprite_index = spr_mach;
+						image_index = 0;
+						state = states.mach2;
+						var movestartspeed = 6
+						if char == "S"
+						{
+							movestartspeed = 8;
+							sprite_index = spr_mach;
+						}
+						else
+							sprite_index = spr_mach1;
+						if (movespeed < movestartspeed && movespeed >= 0)
+						{
+							movespeed = movestartspeed;
+						}
+						if (movespeed > -movestartspeed && movespeed < 0)
+						{
+							movespeed = movestartspeed;
+						}
 					}
 					else
-						sprite_index = spr_mach1;
-					if (movespeed < movestartspeed && movespeed >= 0)
 					{
-						movespeed = movestartspeed;
-					}
-					if (movespeed > -movestartspeed && movespeed < 0)
-					{
-						movespeed = movestartspeed;
+						image_index = 0;
+						state = states.mach3;
+						movespeed = 12;
+						sprite_index = spr_pepperman_shoulderstart;
 					}
 				}
 			}

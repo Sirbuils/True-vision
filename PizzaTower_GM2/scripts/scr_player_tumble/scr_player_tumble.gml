@@ -58,7 +58,7 @@ function scr_player_tumble()
 	{
 		if (ispeppino)
 		{
-			sprite_index = spr_player_poundcancel1;
+			sprite_index = spr_divebomb;
 			image_index = 0;
 			state = states.freefall;
 			dir = xscale;

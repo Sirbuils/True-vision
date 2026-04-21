@@ -8,7 +8,7 @@ function baddiecollisionbox_update(_baddie)
 			var _stagger = false;
 			if (instance_exists(other.baddieID) && instakillmove == true && other.baddieID.state != states.grabbed && other.baddieID.thrown == false && !other.baddieID.invincible && other.baddieID.instantkillable)
 			{
-				if (state == states.mach3 && sprite_index != spr_mach3hit && (character == "P" || character == "V"))
+				if (state == states.mach3 && sprite_index != spr_mach3hit && (character == "P" || character == "V")) && char != "M"
 				{
 					if (fightball == false)
 					{

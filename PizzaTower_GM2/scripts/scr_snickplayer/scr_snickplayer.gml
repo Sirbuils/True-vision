@@ -4,5 +4,6 @@ function scr_snick_crashdash()
 	{
 		sprite_index = spr_player_Sjumpcancelstart;
 		state = states.crashdash;
+		vsp = -11;
 	}
 }

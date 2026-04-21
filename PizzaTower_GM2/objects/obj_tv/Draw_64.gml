@@ -27,6 +27,8 @@ if !obj_player1.ispeppino || global.swapmode
 	pal = 1;
 if obj_player1.char == "S"
 	pal = 2;
+if obj_player1.char == "M"
+	pal = 3;
 pal_swap_set(spr_tv_combopalette, pal, false);
 lang_draw_sprite(spr_tv_combobubble, 0, _cx, _cy);
 draw_set_font(global.combofont2);
@@ -75,6 +77,16 @@ if (room != strongcold_endscreen)
 		}
 		draw_sprite_ext(spr, image_index, tv_x + collect_x, tv_y + collect_y + hud_posY, 1, 1, 0, c_white, alpha);
 	}
+	if (obj_player1.char == "M")
+	{
+		pal_swap_set(spr_tv_palette, 3, false);
+		var spr = spr_tv_empty;
+		if (sprite_index == spr_tv_open)
+		{
+			spr = sprite_index;
+		}
+		draw_sprite_ext(spr, image_index, tv_x + collect_x, tv_y + collect_y + hud_posY, 1, 1, 0, c_white, alpha);
+	}
 	if (state == states.whitenoise)
 	{
 		if (!obj_player1.ispeppino || global.swapmode)
@@ -84,6 +96,10 @@ if (room != strongcold_endscreen)
 		if (obj_player1.char == "S")
 		{
 			pal_swap_set(spr_tv_palette, 2, false);
+		}
+		if (obj_player1.char == "M")
+		{
+			pal_swap_set(spr_tv_palette, 3, false);
 		}
 		draw_sprite(spr_tv_whitenoise, tv_trans, tv_x + collect_x, tv_y + collect_y + hud_posY);
 	}

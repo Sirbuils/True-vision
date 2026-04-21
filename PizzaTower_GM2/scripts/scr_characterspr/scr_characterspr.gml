@@ -272,6 +272,8 @@ function scr_characterspr()
 		spr_backslideland = spr_player_backslideland;
 		spr_breakdanceuppercut = spr_player_breakdanceuppercut;
 		spr_breakdanceuppercutend = spr_player_breakdanceuppercutend;
+		spr_divebomb = spr_player_poundcancel1;
+		spr_divebombland = spr_player_poundcancel2;
 	}
 	if (character == "N" || (character == "P" && !ispeppino))
 	{
@@ -720,7 +722,7 @@ function scr_characterspr()
 		spr_rideweenie = spr_player_weeniemount;
 		spr_palette = spr_peppalette;
 	}
-	if (character == "M")
+	if (character == "M" || char == "M")
 	{
 		spr_idle = spr_pepperman_idle;
 		spr_move = spr_pepperman_move;
@@ -730,10 +732,10 @@ function scr_characterspr()
 		spr_jump2 = spr_pepperman_jump;
 		spr_fall = spr_pepperman_fall;
 		spr_fall2 = spr_pepperman_fall;
-		spr_crouch = spr_player_crouch;
-		spr_crouchjump = spr_player_crouchjump;
-		spr_crouchfall = spr_player_crouchfall;
-		spr_couchstart = spr_player_couchstart;
+		spr_crouch = spr_pepperman_miniidle;
+		spr_crouchjump = spr_pepperman_minijump;
+		spr_crouchfall = spr_pepperman_minifall;
+		spr_couchstart = spr_playerM_ministart;
 		spr_bump = spr_player_bump;
 		spr_land = spr_player_land;
 		spr_land2 = spr_player_land2;
@@ -749,9 +751,9 @@ function scr_characterspr()
 		spr_mach = spr_player_mach;
 		spr_secondjump1 = spr_player_secondjump1;
 		spr_secondjump2 = spr_player_secondjump2;
-		spr_machslidestart = spr_player_machslidestart;
-		spr_machslide = spr_player_machslide;
-		spr_machslideend = spr_player_machslideend;
+		spr_machslidestart = spr_playerM_machslide;
+		spr_machslide = spr_playerM_machslide;
+		spr_machslideend = spr_playerM_machslide;
 		spr_machslideboost = spr_player_machslideboost;
 		spr_land2 = spr_player_land2;
 		spr_punch = spr_player_punch;
@@ -761,7 +763,7 @@ function scr_characterspr()
 		spr_stomp = spr_pepperman_fall;
 		spr_stompprep = spr_pepperman_jump;
 		spr_crouchslide = spr_player_crouchslide;
-		spr_crouch = spr_player_crouch;
+		spr_crouch = spr_pepperman_miniidle;
 		spr_bump = spr_pepperman_hurtplayer;
 		spr_victory = spr_player_victory;
 		spr_hurt = spr_pepperman_hurtplayer;
@@ -770,7 +772,7 @@ function scr_characterspr()
 		spr_mach2jump = spr_player_mach2jump;
 		spr_Timesup = spr_pepperman_timesup;
 		spr_deathstart = spr_player_deathstart;
-		spr_deathend = spr_player_deathend;
+		spr_deathend = spr_playerM_death;
 		spr_machpunch1 = spr_player_machpunch1;
 		spr_machpunch2 = spr_player_machpunch2;
 		spr_hurtjump = spr_player_jumphurt;
@@ -787,25 +789,25 @@ function scr_characterspr()
 		spr_airdash1 = spr_player_airdash1;
 		spr_airdash2 = spr_player_airdash2;
 		spr_keyget = spr_player_keyget;
-		spr_idle1 = spr_player_idlefrown;
-		spr_idle2 = spr_player_idledance;
-		spr_idle3 = spr_player_handgesture1;
-		spr_idle4 = spr_player_handgesture2;
-		spr_idle5 = spr_player_handgesture3;
+		spr_idle1 = spr_pepperman_idle1;
+		spr_idle2 = spr_pepperman_idle2;
+		spr_idle3 = spr_pepperman_idle3;
+		spr_idle4 = spr_pepperman_idle4;
+		spr_idle5 = spr_pepperman_idle5;
 		spr_idle6 = spr_player_handgesture4;
 		spr_piledriver = spr_player_piledriver;
 		spr_piledriverland = spr_player_piledriverland;
 		spr_charge = spr_player_charge;
 		spr_mach3jump = spr_player_mach3jump;
-		spr_mach4 = spr_player_mach4;
+		spr_mach4 = spr_pepperman_shoulderloop;
 		spr_machclimbwall = spr_player_climbwall;
-		spr_dive = spr_player_dive;
-		spr_machroll = spr_player_machroll;
-		spr_hitwall = spr_player_mach3hitwall;
+		spr_dive = spr_playerM_dive;
+		spr_machroll = spr_playerM_machroll;
+		spr_hitwall = spr_playerM_hitwall;
 		spr_superjumpland = spr_player_superjumpland;
 		spr_walljumpstart = spr_player_walljumpstart;
 		spr_superjumpprep = spr_player_superjumpprep;
-		spr_superjump = spr_player_superjump;
+		spr_superjump = spr_playerM_sjump;
 		spr_superjumppreplight = spr_player_superjumppreplight;
 		spr_superjumpright = spr_player_superjumpright;
 		spr_superjumpleft = spr_player_superjumpleft;
@@ -824,7 +826,7 @@ function scr_characterspr()
 		spr_bodyslamstart = spr_pepperman_groundpound;
 		spr_bodyslamfall = spr_pepperman_groundpound;
 		spr_bodyslamland = spr_pepperman_groundpound;
-		spr_crazyrun = spr_player_crazyrun;
+		spr_crazyrun = spr_playerM_crazyrun;
 		spr_bombpeprun = spr_bombpep_run;
 		spr_bombpepintro = spr_bombpep_intro;
 		spr_bombpeprunabouttoexplode = spr_bombpep_runabouttoexplode;
@@ -839,11 +841,11 @@ function scr_characterspr()
 		spr_downpizzabox = spr_player_downpizzabox;
 		spr_uppizzabox = spr_player_uppizzabox;
 		spr_slipnslide = spr_player_slipnslide;
-		spr_mach3boost = spr_player_machslideboost3;
+		spr_mach3boost = spr_playerM_shoulderturn;
 		spr_facehurtup = spr_player_facehurtup;
 		spr_facehurt = spr_player_facehurt;
 		spr_walljumpend = spr_player_walljumpend;
-		spr_suplexdash = spr_player_suplexdash;
+		spr_suplexdash = spr_playerM_suplexdash;
 		spr_suplexdashjumpstart = spr_player_suplexgrabjumpstart;
 		spr_suplexdashjump = spr_player_suplexgrabjump;
 		spr_shotgunsuplexdash = spr_shotgun_suplexdash;
@@ -889,7 +891,12 @@ function scr_characterspr()
 		spr_supertaunt4 = spr_player_supertaunt4;
 		spr_taunt = spr_pepperman_taunt;
 		spr_rideweenie = spr_player_weeniemount;
-		spr_palette = spr_peppalette;
+		spr_mach3boostfall = spr_playerM_machfall;
+		spr_divebomb = spr_playerM_divebomb;
+		spr_divebombland = spr_player_poundcancel2;
+		spr_palette = spr_pepperpalette;
+		spr_backslide = spr_playerM_machroll;
+		spr_backslideland = spr_playerM_machroll;
 	}
 	if (char == "S")
 	{
@@ -1162,6 +1169,8 @@ function scr_characterspr()
 		spr_backslide = spr_player_backslide;
 		spr_backslideland = spr_player_backslideland;
 		spr_breakdanceuppercut = spr_playerS_uppercut;
-		spr_breakdanceuppercutend = spr_playerS_uppercut;		
+		spr_breakdanceuppercutend = spr_playerS_uppercut;
+		spr_divebomb = spr_playerS_divebomb;
+		spr_divebombland = spr_player_poundcancel2;
 	}
 }

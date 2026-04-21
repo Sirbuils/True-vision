@@ -1,7 +1,7 @@
 function state_player_jump()
 {
-	var maxmovespeed = 8;
-	var maxmovespeed2 = 6;
+	var maxmovespeed = char == "S" ? 10 : 8;
+	var maxmovespeed2 = char == "S" ? 8 : 6;
 	var turnmovespeed = 2;
 	var accel = 0.5;
 	var deccel = 0.1;
@@ -483,12 +483,22 @@ function state_player_jump()
 		case "P":
 			if (key_attack && grounded && fallinganimation < 40)
 			{
-				sprite_index = char == "S" ? spr_mach : spr_mach1;
-				image_index = 0;
-				state = states.mach2;
-				if (movespeed < machspeed)
+				if char != "M"
 				{
-					movespeed = machspeed;
+					sprite_index = char == "S" ? spr_mach : spr_mach1;
+					image_index = 0;
+					state = states.mach2;
+					if (movespeed < machspeed)
+					{
+						movespeed = machspeed;
+					}
+				}
+				else
+				{
+					image_index = 0;
+					state = states.mach3;
+					movespeed = 12;
+					sprite_index = spr_pepperman_shoulderstart;
 				}
 			}
 			break;

@@ -7,27 +7,27 @@ enum debug_texttypes
 }
 
 depth = -500;
-DEBUG = false;
-if (parameter_count() > 2)
-{
+//DEBUG = false;
+//if (parameter_count() > 2)
+//{
 	DEBUG = true;
-}
-if (!DEBUG)
-{
-	var n = parameter_count();
-	for (var i = 0; i < n; i++)
-	{
-		var s = parameter_string(i);
-		if (s == "-debug" || s == "debug")
-		{
-			DEBUG = true;
-		}
-	}
-}
-if (!DEBUG)
-{
-	instance_destroy();
-}
+//}
+//if (!DEBUG)
+//{
+//	var n = parameter_count();
+//	for (var i = 0; i < n; i++)
+//	{
+//		var s = parameter_string(i);
+//		if (s == "-debug" || s == "debug")
+//		{
+//			DEBUG = true;
+//		}
+//	}
+//}
+//if (!DEBUG)
+//{
+//	instance_destroy();
+//}
 if (DEBUG)
 {
 	active = false;
@@ -78,6 +78,9 @@ if (DEBUG)
 			
 		if _char == "S"
 			obj_player.char = "S";
+		
+		if _char == "M"
+			obj_player.char = "M";
 			
 		with obj_player
 			scr_characterspr();

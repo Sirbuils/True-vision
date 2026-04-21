@@ -76,6 +76,10 @@ function scr_player_mach3()
 				sprite_index = mach3_spr;
 				fmod_event_one_shot_3d("event:/sfx/playerN/wallbounceland", x, y);
 			}
+			
+			if sprite_index == spr_pepperman_shoulderstart && ANIMATION_END
+				sprite_index = spr_pepperman_shoulderloop;
+			
 			mach2 = 100;
 			momemtum = true;
 			move = key_right + key_left;
@@ -382,8 +386,8 @@ function scr_player_mach3()
 						hsp = 0;
 						flash = false;
 						state = states.bump;
-						hsp = -6 * xscale;
-						vsp = -6;
+						hsp = char == "M" ? -12 * xscale : -6 * xscale;
+						vsp = char == "M" ? -8 : -6;
 						mach2 = 0;
 						image_index = 0;
 						instance_create(x + (xscale * 15), y + 10, obj_bumpeffect);

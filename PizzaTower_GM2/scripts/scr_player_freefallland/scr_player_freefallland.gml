@@ -17,11 +17,32 @@ function scr_player_freefallland()
 	hsp = 0;
 	if (ANIMATION_END)
 	{
-		facehurt = true;
-		sprite_index = spr_facehurtup;
-		image_index = 0;
-		state = states.normal;
-		jumpstop = true;
+		if char != "M"
+		{
+			facehurt = true;
+			sprite_index = spr_facehurtup;
+			image_index = 0;
+			state = states.normal;
+			jumpstop = true;
+		}
+		else
+		{
+			if key_attack
+			{
+				sprite_index = spr_pepperman_shoulderstart;
+				movespeed = 14;
+				image_index = 0;
+				state = states.mach3;
+			}
+			else
+			{
+				facehurt = true;
+				sprite_index = spr_facehurtup;
+				image_index = 0;
+				state = states.normal;
+				jumpstop = true;
+			}
+		}
 	}
 	image_speed = 0.35;
 }

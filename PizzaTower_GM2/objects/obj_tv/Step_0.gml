@@ -67,6 +67,10 @@ switch (state)
 		{
 			idlespr = spr_tv_idleS;
 		}
+		if (obj_player1.char == "M")
+		{
+			idlespr = spr_tv_idleM;
+		}
 		if (global.panic)
 		{
 			idlespr = spr_tv_exprpanic;
@@ -124,6 +128,15 @@ switch (state)
 				idlespr = spr;
 			}
 		}
+		if (obj_player1.char == "M")
+		{
+			var spr = sprite_get_name(idlespr);
+			spr = asset_get_index(concat(spr, "M"));
+			if (spr > -1)
+			{
+				idlespr = spr;
+			}
+		}
 		if (!_transfo)
 		{
 			with (obj_player1)
@@ -159,6 +172,7 @@ switch (state)
 			case spr_tv_idle:
 			case spr_tv_idleN:
 			case spr_tv_idleS:
+			case spr_tv_idleM:
 				if (idleanim > 0)
 				{
 					idleanim--;
@@ -181,6 +195,13 @@ switch (state)
 							sprite_index = spr_tv_idleanim2N;
 						}
 					}
+					if (obj_player1.char == "M")
+					{
+						if (sprite_index == spr_tv_idleanim1)
+						{
+							sprite_index = spr_tv_idleanim1M;
+						}
+					}
 					image_index = 0;
 				}
 				break;
@@ -188,12 +209,13 @@ switch (state)
 			case spr_tv_idleanim2:
 			case spr_tv_idleanim1N:
 			case spr_tv_idleanim2N:
+			case spr_tv_idleanim1M:
 				if (ANIMATION_END)
 				{
 					sprite_index = idlespr;
 					idleanim = 240 + (60 * irandom_range(-1, 2));
 				}
-				if (idlespr != spr_tv_idle && idlespr != spr_tv_idleN && idlespr != spr_tv_idleS)
+				if (idlespr != spr_tv_idle && idlespr != spr_tv_idleN && idlespr != spr_tv_idleS && idlespr != spr_tv_idleM)
 				{
 					sprite_index = idlespr;
 				}
@@ -252,6 +274,15 @@ switch (state)
 							tvsprite = spr;
 						}
 					}
+					if (obj_player1.char == "M")
+					{
+						var spr = sprite_get_name(tvsprite);
+						spr = asset_get_index(concat(spr, "M"));
+						if (spr > -1)
+						{
+							tvsprite = spr;
+						}
+					}
 				}
 				else
 				{
@@ -269,6 +300,15 @@ switch (state)
 					{
 						var spr = sprite_get_name(tvsprite);
 						spr = asset_get_index(concat(spr, "S"));
+						if (spr > -1)
+						{
+							tvsprite = spr;
+						}
+					}
+					if (obj_player1.char == "M")
+					{
+						var spr = sprite_get_name(tvsprite);
+						spr = asset_get_index(concat(spr, "M"));
 						if (spr > -1)
 						{
 							tvsprite = spr;
@@ -402,6 +442,7 @@ switch (state)
 				break;
 			case spr_tv_exprmach3:
 			case spr_tv_exprmach3N:
+			case spr_tv_exprmach3M:
 				with (obj_player1)
 				{
 					if (state != states.mach3 && state != states.climbwall && (state != states.chainsaw || (tauntstoredstate != states.mach3 && tauntstoredstate != states.climbwall)) && sprite_index != spr_mach3boost && mach4mode == false)
@@ -417,6 +458,7 @@ switch (state)
 				break;
 			case spr_tv_exprmach4:
 			case spr_tv_exprmach4N:
+			case spr_tv_exprmach4M:
 				with (obj_player1)
 				{
 					if (mach4mode == false && (state != states.chainsaw || (tauntstoredstate != states.mach3 && tauntstoredstate != states.climbwall)))

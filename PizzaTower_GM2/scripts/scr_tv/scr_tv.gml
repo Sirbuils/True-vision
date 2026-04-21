@@ -120,6 +120,8 @@ function tv_get_palette()
 		palfunction = get_noise_palette_info();
 	if obj_player1.char == "S"
 		palfunction = get_snick_palette_info();
+	if obj_player1.char == "M"
+		palfunction = get_pepper_palette_info();
 	var _info = palfunction;
 	spr_palette = _info.spr_palette;
 	if (obj_player1.isgustavo && obj_player1.ispeppino)
@@ -186,6 +188,22 @@ function tv_do_expression(_spr, _reset_palette = false, _make_peppino = false)
 			if (!_make_peppino && instance_exists(obj_player1) && !obj_player1.ispeppino)
 			{
 				var n = asset_get_index(sprite_get_name(_spr) + "N");
+				if (n > -1)
+				{
+					expressionsprite = n;
+				}
+			}
+			if (!_make_peppino && instance_exists(obj_player1) && obj_player1.char == "S")
+			{
+				var n = asset_get_index(sprite_get_name(_spr) + "S");
+				if (n > -1)
+				{
+					expressionsprite = n;
+				}
+			}
+			if (!_make_peppino && instance_exists(obj_player1) && obj_player1.char == "M")
+			{
+				var n = asset_get_index(sprite_get_name(_spr) + "M");
 				if (n > -1)
 				{
 					expressionsprite = n;
