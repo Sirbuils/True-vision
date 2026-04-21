@@ -11,6 +11,8 @@ if (image_index == 1 && global.panic == false && room != war_13)
 			{
 				lastroom = room;
 				sprite_index = spr_Timesup;
+				if room == entrance_1 || room == medieval_1 || room == ruin_1 || room == dungeon_1
+					image_xscale = 1;
 				image_index = 0;
 				with (obj_camera)
 				{

@@ -5,7 +5,7 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Smorgasbord",
-    "path": "folders/Scripts/Smorgasbord.yy",
+    "name": "snick",
+    "path": "folders/Scripts/Smorgasbord/Player/States/snick.yy",
   },
 }

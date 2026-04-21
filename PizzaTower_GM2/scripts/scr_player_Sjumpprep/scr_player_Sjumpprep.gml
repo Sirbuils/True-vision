@@ -3,7 +3,7 @@ function scr_player_Sjumpprep()
 	switch (character)
 	{
 		case "P":
-			if (sprite_index == spr_superjumppreplight || sprite_index == spr_superjumpright || sprite_index == spr_superjumpleft) || char == "S"
+			if (sprite_index == spr_superjumppreplight || sprite_index == spr_superjumpright || sprite_index == spr_superjumpleft || char == "S")
 			{
 				move = key_left + key_right;
 			}
@@ -20,7 +20,7 @@ function scr_player_Sjumpprep()
 				var _railinst = instance_place(x, y + 1, obj_railparent);
 				hsp = (move * movespeed) + (_railinst.movespeed * _railinst.dir);
 			}
-			if (sprite_index == spr_superjumpprep)
+			if (sprite_index == spr_superjumpprep && char != "S")
 			{
 				movespeed = Approach(movespeed, 0, 1);
 			}
@@ -64,7 +64,7 @@ function scr_player_Sjumpprep()
 					sprite_index = spr_superjumppreplight;
 				}
 			}
-			if (!scr_check_superjump() && (character == "S" || grounded) && (character == "S" || (sprite_index == spr_superjumppreplight || sprite_index == spr_superjumpleft || sprite_index == spr_superjumpright)) && !scr_solid(x, y - 16) && !scr_solid(x, y - 32))
+			if (!scr_check_superjump() && (character == "S" || grounded) && (char == "S" || (sprite_index == spr_superjumppreplight || sprite_index == spr_superjumpleft || sprite_index == spr_superjumpright)) && !scr_solid(x, y - 16) && !scr_solid(x, y - 32))
 			{
 				instance_create(x, y, obj_explosioneffect);
 				sprite_index = spr_superjump;

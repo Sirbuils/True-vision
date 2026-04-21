@@ -1,6 +1,8 @@
 function scr_player_freefall()
 {
 	landAnim = true;
+	if char == "M" && vsp > 0
+		vsp = 10;
 	if (vsp >= 2)
 	{
 		if (steppybuffer > 0)

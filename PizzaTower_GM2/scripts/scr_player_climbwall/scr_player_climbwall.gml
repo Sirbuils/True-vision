@@ -25,11 +25,34 @@ function scr_player_climbwall()
 					movespeed += 0.4;
 				}
 			}
+			if char == "M"
+			{
+				if vsp < 0
+					wallspeed -= 0.5;
+				else
+					wallspeed -= 2;
+
+				if grounded && scr_solid(x + xscale, y) && vsp > 0
+				{
+					xscale *= -1;
+					sprite_index = spr_playerV_mach3;
+					movespeed = 12;
+					state = states.mach3;
+				}
+			}
 			if (wallspeed < 0)
 			{
 				if (!scr_solid(x + xscale, y + 50))
 				{
-					vsp = 0;
+					if char != "M"
+						vsp = 0;
+					else
+					{
+						state = states.normal;
+						movespeed = 0;
+						railmovespeed = 6;
+						raildir = -xscale;
+					}
 				}
 			}
 			crouchslideAnim = true;
@@ -109,7 +132,7 @@ function scr_player_climbwall()
 				}
 				hsp = wallspeed * xscale;
 			}
-			if (wallspeed < 0 && place_meeting(x, y + 12, obj_solid))
+			if (wallspeed < 0 && place_meeting(x, y + 12, obj_solid) && char != "M")
 			{
 				wallspeed = 0;
 			}
@@ -122,8 +145,7 @@ function scr_player_climbwall()
 				sprite_index = spr_playerN_wallbounce;
 				state = states.machcancel;
 				savedmove = xscale;
-				vsp = -(17 * (1 - (noisewalljump * 0.15)));
-				noisewalljump++;
+				vsp = -15;
 				hsp = 0;
 				movespeed = 0;
 				image_index = 0;
@@ -133,19 +155,37 @@ function scr_player_climbwall()
 				fmod_event_one_shot_3d("event:/sfx/pep/jump", x, y);
 				input_buffer_jump = 0;
 				key_jump = false;
-				movespeed = 10;
-				railmovespeed = 0;
-				state = states.mach2;
-				image_index = 0;
-				sprite_index = spr_walljumpstart;
-				if (skateboarding)
+				if char != "M"
 				{
-					sprite_index = spr_clownjump;
+					movespeed = 10;
+					railmovespeed = 0;
+					state = states.mach2;
+					image_index = 0;
+					sprite_index = spr_walljumpstart;
+					if (skateboarding)
+					{
+						sprite_index = spr_clownjump;
+					}
+					vsp = -11;
+					xscale *= -1;
+					jumpstop = false;
+					walljumpbuffer = 4;
 				}
-				vsp = -11;
-				xscale *= -1;
-				jumpstop = false;
-				walljumpbuffer = 4;
+				else
+				{
+					with (instance_create(x, y, obj_noiseeffect))
+					{
+						sprite_index = spr_noisewalljumpeffect;
+					}
+					sprite_index = spr_pepperman_rolling;
+					state = states.pepperbounce;
+					savedmove = xscale;
+					vsp = -(17 * (1 - (noisewalljump * 0.15)));
+					noisewalljump++;
+					hsp = 0;
+					movespeed = 0;
+					image_index = 0;
+				}
 			}
 			if (state != states.mach2 && verticalbuffer <= 0 && place_meeting(x, y - 1, obj_solid) && scr_solid(x + xscale, y) && !place_meeting(x, y - 1, obj_verticalhallway) && !place_meeting(x, y - 1, obj_destructibles) && (!place_meeting(x + sign(hsp), y, obj_slope) || scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x - sign(hsp), y, obj_slope))
 			{

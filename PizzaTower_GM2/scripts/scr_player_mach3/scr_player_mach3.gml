@@ -161,7 +161,7 @@ function scr_player_mach3()
 				{
 					sprite_index = mach3_spr;
 				}
-				if (sprite_index == spr_player_Sjumpcancel && grounded)
+				if ((sprite_index == spr_player_Sjumpcancel || sprite_index == spr_playerM_wallbouncecancel) && grounded)
 				{
 					sprite_index = mach3_spr;
 				}
@@ -242,7 +242,9 @@ function scr_player_mach3()
 				state = states.machslide;
 				image_index = 0;
 			}
-			if (scr_mach_check_dive() && fightball == false && (sprite_index != spr_dashpadmach || dropboost))
+			if key_down && char == "M" && (sprite_index == spr_player_Sjumpcancel || sprite_index == spr_playerM_wallbouncecancel)
+				vsp++;
+			if (scr_mach_check_dive() && fightball == false && (sprite_index != spr_dashpadmach || dropboost || char == "M" && (sprite_index == spr_player_Sjumpcancel || sprite_index == spr_playerM_wallbouncecancel)))
 			{
 				particle_set_scale(particletypes.jumpdust, xscale, 1);
 				create_particle(x, y, particletypes.jumpdust, 0);
@@ -386,7 +388,7 @@ function scr_player_mach3()
 						hsp = 0;
 						flash = false;
 						state = states.bump;
-						hsp = char == "M" ? -12 * xscale : -6 * xscale;
+						hsp = char == "M" ? -8 * xscale : -6 * xscale;
 						vsp = char == "M" ? -8 : -6;
 						mach2 = 0;
 						image_index = 0;

@@ -315,7 +315,8 @@ enum states
 	unknown304 = 304, // Mr. Stick flight
 	machcancelstart = 305,
 	machcancel = 306,
-	crashdash = 307
+	crashdash = 307,
+	pepperbounce = 308
 }
 
 #macro ANIMATION_END floor(image_index) == (image_number - 1)

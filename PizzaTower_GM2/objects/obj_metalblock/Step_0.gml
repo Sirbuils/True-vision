@@ -15,7 +15,7 @@ if (place_meeting(x, y + 1, obj_player1) || place_meeting(x, y - 1, obj_player1)
 	{
 		instance_destroy();
 	}
-	if (place_meeting(x, y - 1, obj_player1) && ((obj_player1.state == states.freefall || obj_player1.state == states.superslam) && obj_player1.freefallsmash >= 10))
+	if (place_meeting(x, y - 1, obj_player1) && ((obj_player1.state == states.freefall || obj_player1.state == states.superslam) && (obj_player1.freefallsmash >= 10 || obj_player1.char == "M")))
 	{
 		with (instance_place(x, y - 1, obj_player1))
 		{

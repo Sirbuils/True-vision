@@ -58,34 +58,51 @@ function scr_player_Sjump()
 	{
 		pizzapepper = 0;
 		a = 0;
-		if (sprite_index == spr_player_supersidejump)
+		if char != "M"
 		{
-			sprite_index = spr_player_supersidejumpland;
-		}
-		if (sprite_index == spr_superjump || sprite_index == spr_superspringplayer)
-		{
-			sprite_index = spr_superjumpland;
-		}
-		with (obj_camera)
-		{
-			shake_mag = 10;
-			shake_mag_acc = 30 / room_speed;
-		}
-		with (obj_baddie)
-		{
-			if (shakestun && point_in_camera(x, y, view_camera[0]) && grounded && vsp > 0)
+			if (sprite_index == spr_player_supersidejump)
 			{
-				image_index = 0;
-				if (grounded)
+				sprite_index = spr_player_supersidejumpland;
+			}
+			if (sprite_index == spr_superjump || sprite_index == spr_superspringplayer)
+			{
+				sprite_index = spr_superjumpland;
+			}
+			with (obj_camera)
+			{
+				shake_mag = 10;
+				shake_mag_acc = 30 / room_speed;
+			}
+			with (obj_baddie)
+			{
+				if (shakestun && point_in_camera(x, y, view_camera[0]) && grounded && vsp > 0)
 				{
-					vsp = -7;
+					image_index = 0;
+					if (grounded)
+					{
+						vsp = -7;
+					}
 				}
 			}
+			fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
+			image_index = 0;
+			state = states.Sjumpland;
+			machhitAnim = false;
 		}
-		fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
-		image_index = 0;
-		state = states.Sjumpland;
-		machhitAnim = false;
+		else
+		{
+			with (instance_create(x, y, obj_noiseeffect))
+			{
+				sprite_index = spr_noisewalljumpeffect;
+			}
+			sprite_index = spr_pepperman_rolling;
+			state = states.pepperbounce;
+			savedmove = xscale;
+			vsp = 10
+			hsp = 0;
+			movespeed = 0;
+			image_index = 0;
+		}
 	}
 	else if ((key_attack2 || input_buffer_slap > 0) && character == "P" && sprite_index != spr_superspringplayer && sprite_index != spr_player_Sjumpcancelstart)
 	{

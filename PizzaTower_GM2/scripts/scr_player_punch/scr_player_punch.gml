@@ -67,6 +67,13 @@ function scr_player_punch()
 				{
 					breakdance--;
 				}
+				if char == "M" && input_buffer_slap > 3
+				{
+					sprite_index = spr_player_kungfuair2transition;
+					state = states.mach2;
+					movespeed = 12;
+					input_buffer_slap = 0;
+				}
 				if (move != 0)
 				{
 					if (move != xscale && movespeed > -6)

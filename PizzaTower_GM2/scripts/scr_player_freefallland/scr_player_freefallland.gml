@@ -27,12 +27,19 @@ function scr_player_freefallland()
 		}
 		else
 		{
-			if key_attack
+			if key_jump2
 			{
-				sprite_index = spr_pepperman_shoulderstart;
-				movespeed = 14;
+				with (instance_create(x, y, obj_noiseeffect))
+				{
+					sprite_index = spr_noisewalljumpeffect;
+				}
+				sprite_index = spr_playerN_wallbounce;
+				state = states.machcancel;
+				savedmove = xscale;
+				vsp = -15;
+				hsp = 0;
+				movespeed = 0;
 				image_index = 0;
-				state = states.mach3;
 			}
 			else
 			{

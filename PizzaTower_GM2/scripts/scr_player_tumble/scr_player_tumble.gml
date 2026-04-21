@@ -63,7 +63,7 @@ function scr_player_tumble()
 			state = states.freefall;
 			dir = xscale;
 			if char != "S"
-				vsp = -6;
+				vsp = char == "M" ? -3 : -6;
 			else
 				vsp = 10;
 			previousmovespeed = movespeed;

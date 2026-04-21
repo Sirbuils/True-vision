@@ -726,7 +726,7 @@ function scr_characterspr()
 	{
 		spr_idle = spr_pepperman_idle;
 		spr_move = spr_pepperman_move;
-		spr_crawl = spr_player_crawl;
+		spr_crawl = spr_pepperman_minimove;
 		spr_hurt = spr_player_hurt;
 		spr_jump = spr_pepperman_jump;
 		spr_jump2 = spr_pepperman_jump;
@@ -823,15 +823,15 @@ function scr_characterspr()
 		spr_knightpepdownslope = spr_knightpep_downslope;
 		spr_knightpepstart = spr_knightpep_start;
 		spr_knightpepcharge = spr_knightpep_charge;
-		spr_bodyslamstart = spr_pepperman_groundpound;
+		spr_bodyslamstart = spr_pepperman_groundpoundstart;
 		spr_bodyslamfall = spr_pepperman_groundpound;
-		spr_bodyslamland = spr_pepperman_groundpound;
+		spr_bodyslamland = spr_pepperman_groundpoundland;
 		spr_crazyrun = spr_playerM_crazyrun;
 		spr_bombpeprun = spr_bombpep_run;
 		spr_bombpepintro = spr_bombpep_intro;
 		spr_bombpeprunabouttoexplode = spr_bombpep_runabouttoexplode;
 		spr_bombpepend = spr_bombpep_end;
-		spr_fireass = spr_player_fireass;
+		spr_fireass = spr_playerM_fireass;
 		spr_fireassground = spr_player_fireassground;
 		spr_fireassend = spr_player_fireassend;
 		spr_tumblestart = spr_player_tumblestart;
@@ -853,8 +853,8 @@ function scr_characterspr()
 		spr_swingding = spr_player_swingding;
 		spr_swingdingend = spr_player_swingdingend;
 		spr_haulingjump = spr_player_haulingjump;
-		spr_haulingidle = spr_player_haulingidle;
-		spr_haulingwalk = spr_player_haulingwalk;
+		spr_haulingidle = spr_playerM_haulingidle;
+		spr_haulingwalk = spr_playerM_haulingmove;
 		spr_haulingstart = spr_player_haulingstart;
 		spr_haulingfall = spr_player_haulingfall;
 		spr_haulingland = spr_player_haulingland;
@@ -897,6 +897,8 @@ function scr_characterspr()
 		spr_palette = spr_pepperpalette;
 		spr_backslide = spr_playerM_machroll;
 		spr_backslideland = spr_playerM_machroll;
+		spr_breakdanceuppercut = spr_playerM_uppercut;
+		spr_breakdanceuppercutend = spr_playerM_uppercut;
 	}
 	if (char == "S")
 	{
