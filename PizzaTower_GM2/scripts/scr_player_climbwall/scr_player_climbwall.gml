@@ -25,17 +25,26 @@ function scr_player_climbwall()
 					movespeed += 0.4;
 				}
 			}
+			if (vsp < -5)
+			{
+				sprite_index = spr_machclimbwall;
+			}
+			else
+			{
+				sprite_index = spr_player_clingwall;
+			}
+			
 			if char == "M"
 			{
 				if vsp < 0
 					wallspeed -= 0.5;
 				else
-					wallspeed -= 2;
+					wallspeed -= 1;
 
 				if grounded && scr_solid(x + xscale, y) && vsp > 0
 				{
 					xscale *= -1;
-					sprite_index = spr_playerV_mach3;
+					sprite_index = spr_mach4;
 					movespeed = 12;
 					state = states.mach3;
 				}
@@ -56,14 +65,6 @@ function scr_player_climbwall()
 				}
 			}
 			crouchslideAnim = true;
-			if (vsp < -5)
-			{
-				sprite_index = spr_machclimbwall;
-			}
-			else
-			{
-				sprite_index = spr_player_clingwall;
-			}
 			if (skateboarding)
 			{
 				if (wallspeed < 0)
@@ -122,13 +123,14 @@ function scr_player_climbwall()
 				if ((wallspeed >= 6 && wallspeed < 12) || skateboarding)
 				{
 					state = states.mach2;
-					movespeed = wallspeed;
+					movespeed = char == "M" ? 12 : wallspeed;
 				}
 				else if (wallspeed >= 12)
 				{
 					state = states.mach3;
 					sprite_index = spr_mach4;
-					movespeed = wallspeed;
+					if movespeed != wallspeed
+						movespeed = wallspeed;
 				}
 				hsp = wallspeed * xscale;
 			}
@@ -180,8 +182,7 @@ function scr_player_climbwall()
 					sprite_index = spr_pepperman_rolling;
 					state = states.pepperbounce;
 					savedmove = xscale;
-					vsp = -(17 * (1 - (noisewalljump * 0.15)));
-					noisewalljump++;
+					vsp = -15;
 					hsp = 0;
 					movespeed = 0;
 					image_index = 0;

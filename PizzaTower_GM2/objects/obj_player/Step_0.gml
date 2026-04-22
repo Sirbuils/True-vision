@@ -1120,7 +1120,7 @@ if (supercharged && (collision_flags & collisionflags.secret) == 0)
 }
 if (state != states.Sjump)
 {
-	sjumpvsp = -12;
+	sjumpvsp = char == "M" ? -21 : -12;
 }
 else
 {
@@ -1129,7 +1129,7 @@ else
 		
 	if char == "M"
 	{
-		if sjumpvsp < -9
+		if sjumpvsp < -16
 			sjumpvsp += 0.5;
 	}
 }
@@ -1706,8 +1706,8 @@ if (character == "S")
 }
 if (char != "S")
 {
-	var mainmask = char == "M" ? spr_pepperman_mask : spr_player_mask
-	var crouchmask = char == "M" ? spr_playerM_crouchmask : spr_crouchmask
+	var mainmask = spr_player_mask
+	var crouchmask = spr_crouchmask
 	if (!scr_solid_player(x, y))
 	{
 		if (state != states.ratmountcrouch && state != states.boxxedpepjump && state != states.boxxedpepspin && !(state == states.bump && sprite_index == spr_tumbleend) && (state != states.barrelslide && state != states.barrelclimbwall) && sprite_index != spr_player_breakdancesuper && sprite_index != spr_barrelslipnslide && sprite_index != spr_barrelroll && sprite_index != spr_bombpepintro && sprite_index != spr_knightpepthunder && state != states.stunned && state != states.crouch && state != states.shotguncrouch && state != states.shotguncrouchjump && state != states.boxxedpep && (state != states.pistol && sprite_index != spr_player_crouchshoot) && state != states.Sjumpprep && state != states.crouchslide && state != states.chainsaw && state != states.machroll && state != states.hurt && state != states.crouchjump && state != states.cheesepepstickup && state != states.cheesepepstickside && state != states.tumble)

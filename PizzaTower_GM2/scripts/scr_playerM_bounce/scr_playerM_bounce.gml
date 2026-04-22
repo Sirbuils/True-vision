@@ -5,7 +5,7 @@ function scr_playerM_bounce()
 	hsp = movespeed;
 	if (move != 0)
 	{
-		movespeed = Approach(movespeed, move * 8, 1);
+		movespeed = Approach(movespeed, move * 12, 1);
 	}
 	else
 	{
@@ -65,7 +65,7 @@ function scr_playerM_bounce()
 			}
 			jumpstop = true;
 			state = states.mach3;
-			movespeed = 12;
+			movespeed = 14;
 			sprite_index = spr_mach4;
 			flash = true;
 			image_index = 0;
@@ -121,7 +121,7 @@ function scr_playerM_bounce()
 				vsp = -5;
 			}
 			state = states.mach3;
-			movespeed = 12;
+			movespeed = 14;
 			sprite_index = spr_playerM_wallbouncecancel;
 			with (instance_create(x, y, obj_crazyrunothereffect))
 			{

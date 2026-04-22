@@ -15,41 +15,27 @@ function scr_player_freefallland()
 	alarm[4] = 14;
 	vsp = 0;
 	hsp = 0;
+	if key_jump2 && char == "M"
+	{
+		with (instance_create(x, y, obj_noiseeffect))
+		{
+			sprite_index = spr_noisewalljumpeffect;
+		}
+		sprite_index = spr_pepperman_rolling;
+		state = states.pepperbounce;
+		savedmove = xscale;
+		vsp = -15;
+		hsp = 0;
+		movespeed = 0;
+		image_index = 0;
+	}
 	if (ANIMATION_END)
 	{
-		if char != "M"
-		{
-			facehurt = true;
-			sprite_index = spr_facehurtup;
-			image_index = 0;
-			state = states.normal;
-			jumpstop = true;
-		}
-		else
-		{
-			if key_jump2
-			{
-				with (instance_create(x, y, obj_noiseeffect))
-				{
-					sprite_index = spr_noisewalljumpeffect;
-				}
-				sprite_index = spr_playerN_wallbounce;
-				state = states.machcancel;
-				savedmove = xscale;
-				vsp = -15;
-				hsp = 0;
-				movespeed = 0;
-				image_index = 0;
-			}
-			else
-			{
-				facehurt = true;
-				sprite_index = spr_facehurtup;
-				image_index = 0;
-				state = states.normal;
-				jumpstop = true;
-			}
-		}
+		facehurt = true;
+		sprite_index = spr_facehurtup;
+		image_index = 0;
+		state = states.normal;
+		jumpstop = true;
 	}
 	image_speed = 0.35;
 }
