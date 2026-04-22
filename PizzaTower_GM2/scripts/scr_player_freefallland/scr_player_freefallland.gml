@@ -15,19 +15,28 @@ function scr_player_freefallland()
 	alarm[4] = 14;
 	vsp = 0;
 	hsp = 0;
-	if key_jump2 && char == "M"
+	if char == "M"
 	{
-		with (instance_create(x, y, obj_noiseeffect))
+		if key_jump2
 		{
-			sprite_index = spr_noisewalljumpeffect;
+			with (instance_create(x, y, obj_noiseeffect))
+			{
+				sprite_index = spr_noisewalljumpeffect;
+			}
+			sprite_index = spr_pepperman_rolling;
+			state = states.pepperbounce;
+			savedmove = xscale;
+			vsp = -15;
+			hsp = 0;
+			movespeed = 0;
+			image_index = 0;
 		}
-		sprite_index = spr_pepperman_rolling;
-		state = states.pepperbounce;
-		savedmove = xscale;
-		vsp = -15;
-		hsp = 0;
-		movespeed = 0;
-		image_index = 0;
+		if key_attack
+		{
+			movespeed = 12;
+			sprite_index = spr_mach4;
+			state = states.mach3;
+		}
 	}
 	if (ANIMATION_END)
 	{

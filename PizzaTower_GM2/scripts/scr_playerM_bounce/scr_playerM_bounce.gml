@@ -19,7 +19,31 @@ function scr_playerM_bounce()
 	}
 	
 	if key_down
-		vsp++
+	{
+		if move != 0
+		{
+			particle_set_scale(particletypes.jumpdust, xscale, 1);
+			create_particle(x, y, particletypes.jumpdust, 0);
+			flash = false;
+			state = states.tumble;
+			image_index = 0;
+			vsp = machrollspeed;
+			if (!grounded)
+			{
+				sprite_index = spr_mach2jump;
+			}
+			else
+			{
+				sprite_index = spr_machroll;
+			}
+		}
+		else
+		{
+			sprite_index = spr_bodyslamstart;
+			vsp = -4;
+			state = states.freefall;
+		}
+	}
 
 	move = key_right + key_left;
 	if (move != 0)
@@ -30,26 +54,8 @@ function scr_playerM_bounce()
 	if (!grounded)
 		vsp -= 0.025;
 	
-	if scr_solid(x + xscale,y) && input_buffer_jump > 0
-	{
-		input_buffer_jump = 0;
-		movespeed = -movespeed * 0.8;
-		with (instance_create(x, y, obj_noiseeffect))
-		{
-			sprite_index = spr_noisewalljumpeffect;
-		}
-	}
-	if scr_solid(x,y + -1) && input_buffer_jump > 0
-	{
-		input_buffer_jump = 0;
-		vsp = 10;
-		with (instance_create(x, y, obj_noiseeffect))
-		{
-			sprite_index = spr_noisewalljumpeffect;
-		}
-	}
 
-	if grounded && vsp > 0
+	if grounded && vsp > 0 && input_buffer_jump < 1
 	{
 		if key_attack
 		{
@@ -80,6 +86,38 @@ function scr_playerM_bounce()
 			movespeed = abs(hsp);
 		}
 	}
+	
+	if scr_solid(x + hsp,y) && input_buffer_jump > 0
+	{
+		if move != 0
+			xscale = move;
+		movespeed = -movespeed * 1.8;
+		with (instance_create(x, y, obj_noiseeffect))
+		{
+			sprite_index = spr_noisewalljumpeffect;
+		}
+	}
+	if scr_solid(x,y + -1) && input_buffer_jump > 0
+	{
+		if move != 0
+			xscale = move;
+		vsp = 11;
+		with (instance_create(x, y, obj_noiseeffect))
+		{
+			sprite_index = spr_noisewalljumpeffect;
+		}
+	}
+	if scr_solid(x,y + 1) && input_buffer_jump > 0
+	{
+		if move != 0
+			xscale = move;
+		vsp = -11;
+		with (instance_create(x, y, obj_noiseeffect))
+		{
+			sprite_index = spr_noisewalljumpeffect;
+		}
+	}
+	
 	if (input_buffer_slap > 0 && key_up && (!global.pistol || char == "M"))
 	{
 		input_buffer_slap = 0;

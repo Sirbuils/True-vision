@@ -160,8 +160,11 @@ function scr_player_freefall()
 				state = states.freefallland;
 			else
 			{
-				movespeed = previousmovespeed;
-				
+				if previousmovespeed > 12
+					movespeed = previousmovespeed;
+				else
+					movespeed = 12;
+					
 				state = states.mach2;
 			}
 			jumpAnim = true;

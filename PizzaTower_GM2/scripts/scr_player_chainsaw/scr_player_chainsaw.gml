@@ -4,7 +4,8 @@ function scr_player_chainsaw()
 	vsp = 0;
 	x = hitX + random_range(-4, 4);
 	y = hitY + random_range(-4, 4);
-	hitLag--;
+	if char != "M" && char != "S"
+		hitLag--;
 	if (key_slap2)
 	{
 		input_buffer_slap = 0;
@@ -14,7 +15,7 @@ function scr_player_chainsaw()
 	{
 		input_attack_buffer = 8;
 	}
-	if (hitLag <= 0)
+	if (hitLag <= 0 || (char == "M" || char == "S"))
 	{
 		x = hitX;
 		y = hitY;
