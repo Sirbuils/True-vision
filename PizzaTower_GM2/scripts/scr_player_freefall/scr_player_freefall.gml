@@ -126,7 +126,7 @@ function scr_player_freefall()
 				other.xscale = -sign(image_xscale);
 				other.state = states.tumble;
 				other.sprite_index = other.spr_crouchslip;
-				if (other.freefallsmash > 20)
+				if (other.freefallsmash > 20 || other.char == "M")
 				{
 					other.movespeed = 12;
 				}

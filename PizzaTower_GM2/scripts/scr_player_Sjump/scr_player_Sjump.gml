@@ -174,7 +174,7 @@ function scr_player_Sjump()
 			image_xscale = other.xscale;
 		}
 	}
-	if (!ispeppino && character == "P" && sprite_index == spr_superjump)
+	if ((!ispeppino && character == "P" || char == "M") && sprite_index == spr_superjump)
 	{
 		hsp = move * 3;
 	}

@@ -27,7 +27,8 @@ function scr_playerM_bounce()
 			flash = false;
 			state = states.tumble;
 			image_index = 0;
-			vsp = machrollspeed;
+			movespeed = 14;
+			vsp = 10;
 			if (!grounded)
 			{
 				sprite_index = spr_mach2jump;
@@ -91,7 +92,8 @@ function scr_playerM_bounce()
 	{
 		if move != 0
 			xscale = move;
-		movespeed = -movespeed * 1.8;
+		vsp = -11;
+		movespeed = -movespeed * 1.2;
 		with (instance_create(x, y, obj_noiseeffect))
 		{
 			sprite_index = spr_noisewalljumpeffect;

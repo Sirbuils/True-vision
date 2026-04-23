@@ -17,6 +17,12 @@ function scr_player_freefallland()
 	hsp = 0;
 	if char == "M"
 	{
+		if key_attack && !key_jump
+		{
+			movespeed = 12;
+			sprite_index = spr_mach4;
+			state = states.mach3;
+		}
 		if key_jump2
 		{
 			with (instance_create(x, y, obj_noiseeffect))
@@ -30,12 +36,6 @@ function scr_player_freefallland()
 			hsp = 0;
 			movespeed = 0;
 			image_index = 0;
-		}
-		if key_attack
-		{
-			movespeed = 12;
-			sprite_index = spr_mach4;
-			state = states.mach3;
 		}
 	}
 	if (ANIMATION_END)

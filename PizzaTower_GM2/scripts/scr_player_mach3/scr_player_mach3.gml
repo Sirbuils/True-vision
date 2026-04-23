@@ -13,7 +13,7 @@ function scr_player_mach3()
 			var slopedeccel = 0.2;
 			var mach4movespeed = 20;
 			var mach3movespeed = 16;
-			var accel = char == "S" ? 0.045 : 0.025;
+			var accel = char == "S" || char == "M" ? 0.045 : 0.025;
 			var mach4accel = 0.1;
 			var jumpspeed = -11;
 			var machrollspeed = 10;

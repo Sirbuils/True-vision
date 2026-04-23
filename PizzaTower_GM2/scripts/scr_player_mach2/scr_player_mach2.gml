@@ -107,6 +107,9 @@ function scr_player_mach2()
 	{
 		sprite_index = spr_mach;
 	}
+	if (ANIMATION_END && sprite_index == spr_player_kungfuair2transition)
+		sprite_index = spr_player_kungfuair2;
+		
 	if (ANIMATION_END && sprite_index == spr_longjump)
 	{
 		sprite_index = spr_longjumpend;

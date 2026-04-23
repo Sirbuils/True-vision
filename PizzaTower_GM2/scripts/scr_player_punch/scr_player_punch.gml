@@ -20,6 +20,15 @@ function scr_player_punch()
 		{
 			sprite_index = spr_breakdanceuppercutend;
 		}
+		if char == "M" && input_buffer_slap > 3
+		{
+			sprite_index = spr_player_kungfuair2transition;
+			state = states.mach2;
+			movespeed = 14;
+			if move != 0
+				xscale = move;
+			input_buffer_slap = 0;
+		}
 		if (grounded && vsp > 0 && (sprite_index == spr_breakdanceuppercut || sprite_index == spr_breakdanceuppercutend))
 		{
 			if (hsp != 0)
@@ -66,13 +75,6 @@ function scr_player_punch()
 				if (breakdance > 0)
 				{
 					breakdance--;
-				}
-				if char == "M" && input_buffer_slap > 3
-				{
-					sprite_index = spr_player_kungfuair2transition;
-					state = states.mach2;
-					movespeed = 12;
-					input_buffer_slap = 0;
 				}
 				if (move != 0)
 				{
