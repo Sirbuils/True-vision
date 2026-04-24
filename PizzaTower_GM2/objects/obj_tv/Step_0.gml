@@ -95,6 +95,14 @@ switch (state)
 		{
 			idlespr = spr_tv_exprpanicN;
 		}
+		if (obj_player1.char == "M" && global.panic)
+		{
+			idlespr = spr_tv_exprpanicM;
+		}
+		if (obj_player1.char == "S" && global.panic)
+		{
+			idlespr = spr_tv_exprpanicS;
+		}
 		var _state = obj_player1.state;
 		if (_state == states.backbreaker || _state == states.chainsaw)
 		{
@@ -201,6 +209,21 @@ switch (state)
 						{
 							sprite_index = spr_tv_idleanim1M;
 						}
+						if (sprite_index == spr_tv_idleanim2)
+						{
+							sprite_index = spr_tv_idleanim2M;
+						}
+					}
+					if (obj_player1.char == "S")
+					{
+						if (sprite_index == spr_tv_idleanim1)
+						{
+							sprite_index = spr_tv_idleanim1S;
+						}
+						if (sprite_index == spr_tv_idleanim2)
+						{
+							sprite_index = spr_tv_idleanim2S;
+						}
 					}
 					image_index = 0;
 				}
@@ -210,6 +233,9 @@ switch (state)
 			case spr_tv_idleanim1N:
 			case spr_tv_idleanim2N:
 			case spr_tv_idleanim1M:
+			case spr_tv_idleanim2M:
+			case spr_tv_idleanim1S:
+			case spr_tv_idleanim2S:
 				if (ANIMATION_END)
 				{
 					sprite_index = idlespr;
@@ -367,6 +393,8 @@ switch (state)
 		{
 			case spr_tv_exprhurt:
 			case spr_tv_exprhurtN:
+			case spr_tv_exprhurtM:
+			case spr_tv_exprhurtS:
 			case spr_tv_exprhurt1:
 			case spr_tv_exprhurt2:
 			case spr_tv_exprhurt3:
@@ -387,6 +415,28 @@ switch (state)
 			case spr_tv_exprhurtN8:
 			case spr_tv_exprhurtN9:
 			case spr_tv_exprhurtN10:
+
+			case spr_tv_exprhurtM1:
+			case spr_tv_exprhurtM2:
+			case spr_tv_exprhurtM3:
+			case spr_tv_exprhurtM4:
+			case spr_tv_exprhurtM5:
+			case spr_tv_exprhurtM6:
+			case spr_tv_exprhurtM7:
+			case spr_tv_exprhurtM8:
+			case spr_tv_exprhurtM9:
+			case spr_tv_exprhurtM10:
+			
+			case spr_tv_exprhurtS1:
+			case spr_tv_exprhurtS2:
+			case spr_tv_exprhurtS3:
+			case spr_tv_exprhurtS4:
+			case spr_tv_exprhurtS5:
+			case spr_tv_exprhurtS6:
+			case spr_tv_exprhurtS7:
+			case spr_tv_exprhurtS8:
+			case spr_tv_exprhurtS9:
+			case spr_tv_exprhurtS10:
 				if (obj_player1.state != states.hurt)
 				{
 					if (expressionbuffer > 0)
@@ -416,6 +466,8 @@ switch (state)
 				break;
 			case spr_tv_exprcombo:
 			case spr_tv_exprcomboN:
+			case spr_tv_exprcomboM:
+			case spr_tv_exprcomboS:
 				if (global.combo < 3 || _transfospr != noone || obj_player1.isgustavo || obj_player1.mach4mode || obj_player1.state == states.hurt || obj_player1.state == states.mach3 || obj_player1.sprite_index == obj_player1.spr_mach3boost || global.stylethreshold >= 3)
 				{
 					state = states.whitenoise;
@@ -428,6 +480,7 @@ switch (state)
 				break;
 			case spr_tv_exprcollect:
 			case spr_tv_exprcollectN:
+			case spr_tv_exprcollectM:
 			case spr_tv_exprcollectS:
 			case spr_tv_happyG:
 				if (expressionbuffer > 0)
@@ -443,6 +496,7 @@ switch (state)
 			case spr_tv_exprmach3:
 			case spr_tv_exprmach3N:
 			case spr_tv_exprmach3M:
+			case spr_tv_exprmach3S:
 				with (obj_player1)
 				{
 					if (state != states.mach3 && state != states.climbwall && (state != states.chainsaw || (tauntstoredstate != states.mach3 && tauntstoredstate != states.climbwall)) && sprite_index != spr_mach3boost && mach4mode == false)
@@ -459,6 +513,7 @@ switch (state)
 			case spr_tv_exprmach4:
 			case spr_tv_exprmach4N:
 			case spr_tv_exprmach4M:
+			case spr_tv_exprmach4S:
 				with (obj_player1)
 				{
 					if (mach4mode == false && (state != states.chainsaw || (tauntstoredstate != states.mach3 && tauntstoredstate != states.climbwall)))
@@ -470,6 +525,8 @@ switch (state)
 				break;
 			case spr_tv_exprheat:
 			case spr_tv_exprheatN:
+			case spr_tv_exprheatM:
+			case spr_tv_exprheatS:
 				var _transfo = false;
 				with (obj_player1)
 				{
@@ -490,6 +547,8 @@ switch (state)
 				break;
 			case spr_tv_exprpanic:
 			case spr_tv_exprpanicN:
+			case spr_tv_exprpanicM:
+			case spr_tv_exprpanicS:
 				var _transfo = false;
 				with (obj_player1)
 				{

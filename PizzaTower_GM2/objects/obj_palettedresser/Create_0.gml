@@ -48,7 +48,32 @@ player_palettes[1] = [
   ["towerguy", false, 20, spr_noisepattern9]
 ];
 player_palettes[2] = [
-  ["snick", true, 1]
+  ["snick", true, 1],
+  ["hip", true, 2],
+  ["trueblue", true, 3],
+  ["phase", true, 4],
+  ["pixel", true, 5],
+  ["leather", true, 6],
+  ["breeze", true, 7],
+  ["rad", true, 8],
+  ["coolest", true, 9],
+  ["irl", true, 10],
+  ["bolts", true, 11]
+];
+player_palettes[3] = [
+  ["classicM", true, 1],
+  ["bother", true, 2],
+  ["scotch", true, 3],
+  ["green", true, 4],
+  ["lepper", true, 5],
+  ["world", true, 6],
+  ["unpopular", true, 7],
+  ["dumb", true, 8],
+  ["redhot", true, 9],
+  ["derfect", true, 10],
+  ["man", true, 11],
+  ["hawaiian", true, 12, spr_pepperpattern1],
+  ["sculpt", true, 13, spr_pepperpattern2]
 ];
 ini_open_from_string(obj_savesystem.ini_str_options);
 for (var i = 0; i < array_length(player_palettes); i++)

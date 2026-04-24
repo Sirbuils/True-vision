@@ -144,6 +144,8 @@ function tv_do_expression(_spr, _reset_palette = false, _make_peppino = false)
 			{
 				case spr_tv_exprhurt:
 				case spr_tv_exprhurtN:
+				case spr_tv_exprhurtM:
+				case spr_tv_exprhurtS:
 				case spr_tv_hurtG:
 					expressionbuffer = 60;
 					break;
@@ -167,6 +169,28 @@ function tv_do_expression(_spr, _reset_palette = false, _make_peppino = false)
 				case spr_tv_exprhurtN8:
 				case spr_tv_exprhurtN9:
 				case spr_tv_exprhurtN10:
+				
+				case spr_tv_exprhurtM1:
+				case spr_tv_exprhurtM2:
+				case spr_tv_exprhurtM3:
+				case spr_tv_exprhurtM4:
+				case spr_tv_exprhurtM5:
+				case spr_tv_exprhurtM6:
+				case spr_tv_exprhurtM7:
+				case spr_tv_exprhurtM8:
+				case spr_tv_exprhurtM9:
+				case spr_tv_exprhurtM10:
+				
+				case spr_tv_exprhurtS1:
+				case spr_tv_exprhurtS2:
+				case spr_tv_exprhurtS3:
+				case spr_tv_exprhurtS4:
+				case spr_tv_exprhurtS5:
+				case spr_tv_exprhurtS6:
+				case spr_tv_exprhurtS7:
+				case spr_tv_exprhurtS8:
+				case spr_tv_exprhurtS9:
+				case spr_tv_exprhurtS10:
 					expressionbuffer = 100;
 					break;
 				case spr_tv_exprcollect:

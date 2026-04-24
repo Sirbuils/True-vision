@@ -351,9 +351,17 @@ function scr_hurtplayer(_player)
 				{
 					hurtTV = choose(spr_tv_exprhurt1, spr_tv_exprhurt2, spr_tv_exprhurt3, spr_tv_exprhurt4, spr_tv_exprhurt5, spr_tv_exprhurt6, spr_tv_exprhurt7, spr_tv_exprhurt8, spr_tv_exprhurt9, spr_tv_exprhurt10);
 				}
-				else
+				if (!ispeppino)
 				{
 					hurtTV = choose(spr_tv_exprhurtN1, spr_tv_exprhurtN2, spr_tv_exprhurtN3, spr_tv_exprhurtN4, spr_tv_exprhurtN5, spr_tv_exprhurtN6, spr_tv_exprhurtN7, spr_tv_exprhurtN8, spr_tv_exprhurtN9, spr_tv_exprhurtN10);
+				}
+				if (obj_player1.char == "M")
+				{
+					hurtTV = choose(spr_tv_exprhurtM1, spr_tv_exprhurtM2, spr_tv_exprhurtM3, spr_tv_exprhurtM4, spr_tv_exprhurtM5, spr_tv_exprhurtM6, spr_tv_exprhurtM7, spr_tv_exprhurtM8, spr_tv_exprhurtM9, spr_tv_exprhurtM10);
+				}
+				if (obj_player1.char == "S")
+				{
+					hurtTV = choose(spr_tv_exprhurtS1, spr_tv_exprhurtS2, spr_tv_exprhurtS3, spr_tv_exprhurtS4, spr_tv_exprhurtS5, spr_tv_exprhurtS6, spr_tv_exprhurtS7, spr_tv_exprhurtS8, spr_tv_exprhurtS9, spr_tv_exprhurtS10);
 				}
 			}
 			else
@@ -390,7 +398,17 @@ function scr_hurtplayer(_player)
 				}
 				if (!ispeppino)
 				{
-					hurtTV = choose(spr_tv_exprhurt1, spr_tv_exprhurt2, spr_tv_exprhurt3, spr_tv_exprhurt4, spr_tv_exprhurt5, spr_tv_exprhurt6, spr_tv_exprhurt7, spr_tv_exprhurt8, spr_tv_exprhurt9, spr_tv_exprhurt10);
+					if obj_player1.char != "S"
+					{
+						if obj_player1.char != "M"
+							hurtTV = choose(spr_tv_exprhurt1, spr_tv_exprhurt2, spr_tv_exprhurt3, spr_tv_exprhurt4, spr_tv_exprhurt5, spr_tv_exprhurt6, spr_tv_exprhurt7, spr_tv_exprhurt8, spr_tv_exprhurt9, spr_tv_exprhurt10);
+						else
+							hurtTV = choose(spr_tv_exprhurtM1, spr_tv_exprhurtM2, spr_tv_exprhurtM3, spr_tv_exprhurtM4, spr_tv_exprhurtM5, spr_tv_exprhurtM6, spr_tv_exprhurtM7, spr_tv_exprhurtM8, spr_tv_exprhurtM9, spr_tv_exprhurtM10);
+					}
+					else
+					{
+						hurtTV = choose(spr_tv_exprhurtS1, spr_tv_exprhurtS2, spr_tv_exprhurtS3, spr_tv_exprhurtS4, spr_tv_exprhurtS5, spr_tv_exprhurtS6, spr_tv_exprhurtS7, spr_tv_exprhurtS8, spr_tv_exprhurtS9, spr_tv_exprhurtS10);
+					}
 				}
 				else
 				{

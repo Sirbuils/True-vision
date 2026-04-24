@@ -79,13 +79,6 @@ if (room != strongcold_endscreen)
 	}
 	if (obj_player1.char == "M")
 	{
-		var _spr = sprite_get_name(tvsprite);
-		_spr = asset_get_index(concat(spr, "M"));
-		if (_spr > -1)
-		{
-			if tvsprite != _spr
-				draw_sprite_ext(spr_tv_wipM,image_index,tv_x + collect_x, tv_y + collect_y + hud_posY, 1, 1, 0, c_white, alpha)
-		}
 		pal_swap_set(spr_tv_palette, 3, false);
 		var spr = spr_tv_empty;
 		if (sprite_index == spr_tv_open)

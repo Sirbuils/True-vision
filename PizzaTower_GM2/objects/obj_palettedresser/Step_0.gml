@@ -14,6 +14,10 @@ if (obj_player1.ispeppino != ispeppino)
 	{
 		palettes = player_palettes[2];
 	}
+	if (obj_player1.char == "M")
+	{
+		palettes = player_palettes[3];
+	}
 	with (obj_player1)
 	{
 		if (paletteselect > 2)
@@ -26,6 +30,8 @@ if (obj_player1.ispeppino != ispeppino)
 					palfunction = get_noise_palette_info();
 				if obj_player1.char == "S"
 					palfunction = get_snick_palette_info();
+				if obj_player1.char == "M"
+					palfunction = get_pepper_palette_info();
 				var info = palfunction;
 				if (pal == info.paletteselect && (array_length(other.palettes[i]) <= 3 || (array_length(other.palettes[i]) > 3 && other.palettes[i][3] == info.patterntexture)))
 				{
