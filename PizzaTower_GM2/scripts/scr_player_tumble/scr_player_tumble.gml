@@ -57,17 +57,19 @@ function scr_player_tumble()
 	if (sprite_index == spr_dive && key_jump)
 	{
 		if (ispeppino)
-		{
-			sprite_index = spr_divebomb;
-			image_index = 0;
-			state = states.freefall;
-			dir = xscale;
-			if char != "S"
-				vsp = char == "M" ? -3 : -6;
-			else
-				vsp = 10;
-			previousmovespeed = movespeed;
-		}
+	  {
+            sprite_index = spr_divebomb;
+            image_index = 0;
+            state = states.freefall;
+            dir = xscale;
+            
+            if (char != "S")
+                vsp = (char == "M") ? -3 : -6;
+            else
+                vsp = 10;
+            
+            savedmovespeed = movespeed;
+        }
 		else
 		{
 			sprite_index = spr_playerN_divebomb;
@@ -146,36 +148,49 @@ function scr_player_tumble()
 		movespeed = 14;
 	}
 	if ((state != states.freefall && ((place_meeting(x + xscale, y, obj_solid) || scr_solid_slope(x + xscale, y)) && !place_meeting(x + hsp, y, obj_rollblock) && (!place_meeting(x + hsp, y, obj_rattumble) || sprite_index != spr_tumble) && !place_meeting(x + hsp, y, obj_destructibles))) || place_meeting(x, y, obj_timedgate))
-	{
-		if (char == "S" && grounded || char != "S")
-		{
-			hsp = 0;
-			movespeed = 0;
-			if (sprite_index == spr_tumble || sprite_index == spr_tumblestart)
-			{
-				fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y);
-				state = states.bump;
-				landAnim = false;
-				sprite_index = spr_tumbleend;
-				image_index = 0;
-				hsp = -xscale * 2;
-				vsp = -3;
-				jumpstop = true;
-			}
-			else
-			{
-				fmod_event_one_shot_3d("event:/sfx/pep/splat", x, y);
-				state = states.bump;
-				image_index = 0;
-				sprite_index = spr_wallsplat;
-			}
-		}
-		else
-		{
-			xscale *= -1;
-			instance_create(x,y,obj_bumpeffect);
-		}
-	}
+	 {
+        if ((char == "S" && grounded) || char != "S")
+        {
+            if (char != "M" || (grounded && char == "M"))
+            {
+                hsp = 0;
+                movespeed = 0;
+            }
+            else if (char == "M" && !grounded)
+            {
+                sprite_index = spr_divebomb;
+                image_index = 0;
+                state = states.freefall;
+                xscale *= -1;
+                vsp = -3;
+                savedmovespeed = movespeed;
+            }
+            
+            if (sprite_index == spr_tumble || sprite_index == spr_tumblestart)
+            {
+                fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y);
+                state = states.bump;
+                landAnim = false;
+                sprite_index = spr_tumbleend;
+                image_index = 0;
+                hsp = -xscale * 2;
+                vsp = -3;
+                jumpstop = true;
+            }
+            else if (char != "M")
+            {
+                fmod_event_one_shot_3d("event:/sfx/pep/splat", x, y);
+                state = states.bump;
+                image_index = 0;
+                sprite_index = spr_wallsplat;
+            }
+        }
+        else
+        {
+            xscale *= -1;
+            instance_create(x, y, obj_bumpeffect);
+        }
+    }
 	if (!key_jump2 && jumpstop == false && vsp < 0.5 && stompAnim == false)
 	{
 		vsp /= 2;
