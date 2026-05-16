@@ -58,6 +58,8 @@ function scr_player_freefall()
 	move = key_left + key_right;
 	if (!grounded)
 	{
+        if (char == "M" && sprite_index == spr_divebomb && move == -xscale)
+            xscale *= -1;
 		if (sprite_index != spr_rockethitwall)
 		{
 			hsp = move * movespeed;
@@ -156,17 +158,16 @@ function scr_player_freefall()
 				sprite_index = spr_shotgunjump2;
 			}
 			image_index = 0;
-			if char != "S"
-				state = states.freefallland;
-			else
-			{
-				if previousmovespeed > 12
-					movespeed = previousmovespeed;
-				else
-					movespeed = 12;
-					
-				state = states.mach2;
-			}
+		       if ((char != "S" && char != "M") || (char == "S" && !key_attack) || (char == "M" && !key_attack))
+            {
+                state = states.freefallland;
+            }
+            else if ((char == "S" && key_attack) || (char == "M" && key_attack))
+            {
+                movespeed = (savedmovespeed > 12) ? savedmovespeed : 12;
+                state = states.mach2;
+            }
+            
 			jumpAnim = true;
 			jumpstop = false;
 			with (obj_camera)
