@@ -1,4 +1,11 @@
-maxspeed = 1;
-hitboxcreate = false;
-image_speed = 0;
+maxspeed = 5;
+finalspeed = maxspeed;
+hitboxid = -4;
+image_speed = 0.35;
 depth = -5;
+alarm[0] = 10;
+savedcx = camera_get_view_x(view_camera[0]);
+savedcy = camera_get_view_y(view_camera[0]);
+savedx = x;
+savedy = y;
+hitboxcreate = 0;
