@@ -8,6 +8,8 @@ if (active)
 		visible = false;
 	}
 }
+if (obj_player.char == "S" && !instance_exists(obj_snickexe) && global.laps == 1)
+    instance_create(x, y, obj_snickexe);
 if (ANIMATION_END)
 {
 	switch (sprite_index)
