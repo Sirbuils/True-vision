@@ -5,6 +5,7 @@ function state_player_normal()
 	var accel = 0.5;
 	var deccel = 0.1;
 	var jumpspeed = -11;
+    savedmovespeed = 12;
 	mach2 = 0;
 	move = key_left + key_right;
 	skateboarding = false;
